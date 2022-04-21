@@ -50,6 +50,7 @@ struct DrawView: View {
                             )
                             .multilineTextAlignment(.leading)
                             .padding(.leading)
+                            .offset(y: 19)
                         Spacer()
                     }
                     HStack{
