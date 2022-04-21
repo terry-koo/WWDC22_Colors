@@ -18,17 +18,11 @@ class MyData: ObservableObject {
     @Published var randomCustomer = "customer" + String(Int.random(in: 3...13))
     @Published var right = 0
     @Published var wrong = 0
-    @Published var randomMessage = Array(Set([
-        " I need the color paint on the right!! ",
-        " Hurry up my friend!! ",
-        " I need paint to paint my house ",
-        " I love the paint in this store ",
-        " People recommend your paint ",
-        " It's the most popular paint shop in my town "
-    ]))[0]
+    @Published var randomMessage = " Give me the same color paint on the right! "
     
     
     var message = [
+        " Give me the same color paint on the right ",
         " I need the color paint on the right!! ",
         " Hurry up my friend!! ",
         " I need paint to paint my house ",
@@ -51,7 +45,7 @@ class MyData: ObservableObject {
     }
     
     func getRandomMessage() -> String {
-        return message[Int.random(in: 0...5)]
+        return message[Int.random(in: 0...6)]
     }
 
 }

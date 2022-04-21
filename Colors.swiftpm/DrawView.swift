@@ -57,6 +57,7 @@ struct DrawView: View {
                             Image(myData.randomCustomer)
                                 .resizable()
                                 .frame(height: geometry.size.height * 0.7)
+                            
                         }
                         
                         VStack{

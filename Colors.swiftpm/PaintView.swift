@@ -346,24 +346,64 @@ struct PaintView: View {
                             .fill(Color("card"))
                         
                         // new version
-                        VStack{
-                            // paint
-                            HStack{
-                                Image("paint")
-                                Image("paint")
+                        HStack{
+                            VStack{
+                                // paint
+                                HStack{
+                                    Image("paint-left")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                    Image("paint-right")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                
+                                // bucket
+                                HStack{
+                                    Image("bucket")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        
+                                }
+                                
                             }
                             
-                            // bucket
-                            HStack{
-                                Image("bucket")
+                            VStack{
+                                
+                                ZStack{
+                                    // Staff message
+                                    VStack{
+                                        HStack{
+                                            Spacer()
+                                            VStack{
+                                                Text(" Ready to sell? ")
+                                                    .background(
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .fill(Color("message-box")
+                                                        )
+                                                    )
+                                                Text(" Push SELL button ")
+                                                    .background(
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .fill(Color("message-box")
+                                                        )
+                                                    )
+                                            }
+                                            
+                                        }
+                                        Spacer()
+                                    }
+                                    Image("staff1")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                Button(action: {
+                                    print("button click")
+                                }, label: {
+                                    Text("Sell")
+                                })
+                                
                             }
-                            
-                        }
-                        
-                        VStack{
-                            
-                            
-                            
                         }
                         
                         // old version
