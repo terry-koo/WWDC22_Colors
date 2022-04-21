@@ -19,6 +19,7 @@ class MyData: ObservableObject {
     @Published var right = 0
     @Published var wrong = 0
     @Published var randomMessage = " Give me the same color paint on the right! "
+    @Published var showModal = false
     
     
     var message = [

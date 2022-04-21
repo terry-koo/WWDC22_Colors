@@ -10,6 +10,8 @@ struct PaintView: View {
     @EnvironmentObject var myData: MyData
     
 
+    
+
 
     var body: some View {
         GeometryReader{ paintGeometry in
@@ -26,7 +28,7 @@ struct PaintView: View {
                         
                         //circle
                         GeometryReader{ geometry in
-                            let radius: Double = geometry.size.width * 0.42
+                            let radius: Double = geometry.size.width * 0.35
                             
                             let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                        
@@ -58,7 +60,7 @@ struct PaintView: View {
                         
                         // circle
                         GeometryReader{ geometry in
-                            let radius: Double = geometry.size.width * 0.42
+                            let radius: Double = geometry.size.width * 0.35
                             
                             let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                             
@@ -90,7 +92,7 @@ struct PaintView: View {
                         
                         GeometryReader{ geometry in
                             let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
-                            let weight: Double = geometry.size.width * 0.185
+                            let weight: Double = geometry.size.width * 0.15
       
                             // triangle yellow
                             Path { path in
@@ -333,7 +335,7 @@ struct PaintView: View {
                         }
                         
                     } // ZStack
-                    .frame(minHeight: 190,  maxHeight: 210)
+                    .frame(minHeight: 200,  maxHeight: 210)
                 } else {
                     // ipad pro 12.9inch
                     // color combiner
@@ -363,6 +365,7 @@ struct PaintView: View {
                                     Image("bucket")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
+                                        .offset(x: 17)
                                         
                                 }
                                 
@@ -399,9 +402,14 @@ struct PaintView: View {
                                 }
                                 Button(action: {
                                     print("button click")
+                                    myData.showModal.toggle()
                                 }, label: {
-                                    Text("Sell")
+                                    Text("SELL")
                                 })
+                                // 모달창
+                                .sheet(isPresented: $myData.showModal) {
+                                    ClearView()
+                                }
                                 
                             }
                         }
@@ -499,7 +507,7 @@ struct PaintView: View {
 //                        }
                         
                     } // ZStack
-                    .frame(minHeight: 270,  maxHeight: 280)
+                    .frame(minHeight: 300,  maxHeight: 310)
                 }
             } // VStack
             .padding([.top, .bottom, .trailing])
