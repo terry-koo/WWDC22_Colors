@@ -8,7 +8,7 @@ struct PaintView: View {
     @State private var selectFirst = false
     @State private var selectSceond = false
     @EnvironmentObject var myData: MyData
-    @State var showModal = false
+    
 
     
 
@@ -402,12 +402,12 @@ struct PaintView: View {
                                 }
                                 Button(action: {
                                     print("button click")
-                                    showModal.toggle()
+                                    myData.showModal.toggle()
                                 }, label: {
                                     Text("SELL")
                                 })
                                 // 모달창
-                                .sheet(isPresented: $showModal) {
+                                .sheet(isPresented: $myData.showModal) {
                                     ClearView()
                                 }
                                 

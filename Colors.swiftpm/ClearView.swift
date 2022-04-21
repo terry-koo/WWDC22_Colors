@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ClearView: View {
+    @EnvironmentObject var myData: MyData
     @State private var acceptedTerms = false
        
        var body: some View {
            
-               Button("Accept Terms") {
-                   acceptedTerms = true
-               }
-           
+           Button(action: {
+               myData.showModal.toggle()
+               acceptedTerms.toggle()
+           }, label: {
+               Text("close")
+           })
            .interactiveDismissDisabled(!acceptedTerms)
        }
         
