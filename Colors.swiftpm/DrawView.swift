@@ -12,9 +12,6 @@ struct DrawView: View {
     @EnvironmentObject var myData: MyData
 
 
-    
-    
-    
     var body: some View {
         
         GeometryReader{ geometry in
@@ -24,25 +21,45 @@ struct DrawView: View {
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)
                     .frame(minWidth: 0, maxWidth: .infinity)
 
-                
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color("card"))
                 
                 VStack{
-                    HStack{
-                        Image(systemName: "timer")
-                            .font(.title)
-                        Text(timeString(time: myData.value))
-                            .font(.title)
+                    ZStack{
+                        HStack{
+                            Button(action: {
+                                myData.showInformation.toggle()
+                                print("Information touch")
+                            }, label: {
+                                Image(systemName: "questionmark.circle")
+                                    .font(.title)
+                                    .foregroundColor(.gray)
+                                    .padding()
+                                }
+                            )
+                            .sheet(isPresented: $myData.showInformation) {
+                                InformationView()
+                            }
+                            Spacer()
+                        }
+                        HStack{
+                            Image(systemName: "timer")
+                                .font(.title)
+                            Text(timeString(time: myData.value))
+                                .font(.title)
+                        }
                     }
                     HStack{
-                        Text("Left customer : \(myData.count) / 10")
+                        Text("Left Customer : \(myData.count) / 10")
+                            .font(.title)
+                            .fontWeight(.bold)
                     }
                     Spacer()
                     // customer message
                     HStack{
                         Text(myData.randomMessage)
-                        .font(.system(size: 25))
+                            .font(.system(size: 25))
+                            .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color("message-box")
@@ -58,27 +75,20 @@ struct DrawView: View {
                             Image(myData.randomCustomer)
                                 .resizable()
                                 .frame(height: geometry.size.height * 0.7)
-                            
+                                .padding(.leading)
                         }
-                        
                         VStack{
-                               
                             Image("bucket")
                                 .resizable()
                                 .frame(height: geometry.size.height * 0.3)
                         }
- 
                     }
                     Spacer()
                 }
-
             } // ZStack
             .padding([.top, .leading, .bottom])
-        
         }
-        
     }
-    
 }
 
 

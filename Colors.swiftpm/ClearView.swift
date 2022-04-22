@@ -9,35 +9,41 @@ import SwiftUI
 
 struct ClearView: View {
     @EnvironmentObject var myData: MyData
-    @State private var acceptedTerms = false
+    @State private var accept = false
        
        var body: some View {
 
                
                    VStack{
-                       Text("All The Paint Is Out Of Stock")
+                       Text("All The Paint Is Out Of Stock!")
                            .font(.largeTitle)
                            .fontWeight(.heavy)
+                           .padding()
                        
                        Image(myData.randomRich)
+                           .padding()
                        
                        Text("score : \(myData.right) / 10")
                            .font(.title)
                            .fontWeight(.bold)
+                           .padding()
                        
-                       if myData.right == 10 {
+                       if myData.right > 8 {
                            Text("You're the best salesman")
                                .font(.title)
+                               .padding()
                        } else {
                            Text("You'll do better next time!")
                                .font(.title)
+                               .padding(.top)
+                               .opacity(0.5)
                        }
 
 
                        Button(action: {
                            print("Retry button")
                            myData.showModal.toggle()
-                           acceptedTerms.toggle()
+                           accept.toggle()
                        }) {
                            HStack {
                                Image(systemName: "gobackward")
@@ -51,7 +57,7 @@ struct ClearView: View {
                            .foregroundColor(.white)
                            .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color("blue-green")]), startPoint: .leading, endPoint: .trailing))
                            .cornerRadius(40)
-                           .interactiveDismissDisabled(!acceptedTerms)
+                           .interactiveDismissDisabled(!accept)
                        }
                    }
                        

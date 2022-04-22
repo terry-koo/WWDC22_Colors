@@ -380,12 +380,14 @@ struct PaintView: View {
                                             Spacer()
                                             VStack{
                                                 Text(" Ready to sell? ")
+                                                    .foregroundColor(Color("message-font"))
                                                     .background(
                                                         RoundedRectangle(cornerRadius: 10)
                                                             .fill(Color("message-box")
                                                         )
                                                     )
                                                 Text(" Push SELL button ")
+                                                    .foregroundColor(Color("message-font"))
                                                     .background(
                                                         RoundedRectangle(cornerRadius: 10)
                                                             .fill(Color("message-box")
