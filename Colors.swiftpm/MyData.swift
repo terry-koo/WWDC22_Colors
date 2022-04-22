@@ -20,6 +20,7 @@ class MyData: ObservableObject {
     @Published var wrong = 0
     @Published var randomMessage = " Give me the same color paint on the right! "
     @Published var showModal = false
+    @Published var randomRich = Array(Set(["rich1","rich2","rich3","rich4","rich5"]))[0]
     
     
     var message = [
@@ -47,6 +48,10 @@ class MyData: ObservableObject {
     
     func getRandomMessage() -> String {
         return message[Int.random(in: 0...6)]
+    }
+    
+    func getRandomRichImage() -> String{
+        return "rich" + String(Int.random(in: 1...5))
     }
 
 }
