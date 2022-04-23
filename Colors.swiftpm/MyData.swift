@@ -12,8 +12,8 @@ import Combine
 class MyData: ObservableObject {
     @Published var value: Int = 0
     @Published var number: Int = 0
-    @Published var resultColor: Color = Color("temp")
-    @Published var targetColor: Color = Array(Set([ Color("blue-green"), Color("blue-violet"), Color("green"), Color("orange"), Color("red-orange"), Color("red-violet"), Color("violet"), Color("yellow-green"), Color("yellow-orange")]))[0]
+    @Published var resultColor: String = "empty"
+    @Published var targetColor: String = Array(Set(["blue-green", "blue-violet", "green", "orange", "red-orange", "red-violet", "violet", "yellow-green", "yellow-orange"]))[0]
     @Published var count: Int = 0
     @Published var randomCustomer = "customer" + String(Int.random(in: 3...13))
     @Published var right = 0
@@ -53,6 +53,10 @@ class MyData: ObservableObject {
     
     func getRandomRichImage() -> String{
         return "rich" + String(Int.random(in: 1...5))
+    }
+    
+    func getTime() -> String {
+        return timeString(time: self.value)
     }
 
 }

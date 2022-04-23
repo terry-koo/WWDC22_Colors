@@ -10,6 +10,8 @@ import SwiftUI
 struct ClearView: View {
     @EnvironmentObject var myData: MyData
     @State private var accept = false
+    @State var time: String
+    
        
        var body: some View {
 
@@ -20,18 +22,31 @@ struct ClearView: View {
                            .fontWeight(.heavy)
                            .padding()
                        
-                       Image(myData.randomRich)
-                           .padding()
-                       
+                       if myData.right > 8 {
+                           Image(myData.randomRich)
+                               .padding()
+                       } else {
+                           Image("closed")
+                               .resizable()
+                               .frame(width: 600, height: 550, alignment: .center)
+                       }
+                       HStack{
+                           Image(systemName: "timer")
+                               .font(.title)
+                           Text(time)
+                               .font(.title)
+                       }
+                      
                        Text("score : \(myData.right) / 10")
                            .font(.title)
                            .fontWeight(.bold)
                            .padding()
                        
-                       if myData.right > 8 {
+                       if myData.right > 7 {
                            Text("You're the best salesman")
                                .font(.title)
                                .padding()
+                           
                        } else {
                            Text("You'll do better next time!")
                                .font(.title)
@@ -42,8 +57,10 @@ struct ClearView: View {
 
                        Button(action: {
                            print("Retry button")
+                           rePlay(myData: myData)
                            myData.showModal.toggle()
                            accept.toggle()
+                           
                        }) {
                            HStack {
                                Image(systemName: "gobackward")
@@ -60,19 +77,22 @@ struct ClearView: View {
                            .interactiveDismissDisabled(!accept)
                        }
                    }
-                       
-                   
-               
-
        }
 }
 
-
-
-
-struct ClearView_Preview: PreviewProvider {
-    static var previews: some View {
-        ClearView()
-         
-    }
+func rePlay(myData: MyData){
+    myData.wrong = 0
+    myData.right = 0
+    myData.count = 0
+    myData.resultColor = "empty"
+    myData.value = 0
+    
 }
+
+
+//struct ClearView_Preview: PreviewProvider {
+//    static var previews: some View {
+//        ClearView()
+//         
+//    }
+//}

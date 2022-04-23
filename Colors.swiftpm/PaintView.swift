@@ -3,9 +3,9 @@ import SwiftUI
 
 struct PaintView: View {
     @State private var canTouchDown = true
-    @State private var firstColor = Color("temp")
-    @State private var secondColor = Color("temp")
-    @State private var resultColor = Color("temp")
+    @State private var firstColor = "empty"
+    @State private var secondColor = "empty"
+   //@State private var resultColor = "empty"
     @State private var selectFirst = false
     @State private var selectSceond = false
     @EnvironmentObject var myData: MyData
@@ -120,13 +120,13 @@ struct PaintView: View {
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
                                 if selectFirst {
-                                    firstColor = Color("yellow")
+                                    firstColor = "yellow"
                                     selectFirst.toggle()
                                 } else if selectSceond {
-                                    secondColor = Color("yellow")
+                                    secondColor = "yellow"
                                     selectSceond.toggle()
                                 }
-                                resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
                             }
                             
                             // triangle red
@@ -143,13 +143,14 @@ struct PaintView: View {
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
                                 if selectFirst {
-                                    firstColor = Color("red")
+                                    firstColor = "red"
                                     selectFirst.toggle()
                                 } else if selectSceond {
-                                    secondColor = Color("red")
+                                    secondColor = "red"
                                     selectSceond.toggle()
                                 }
-                                resultColor = mixColor(first: firstColor, second: secondColor)
+                                
+                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
                             }
                             
                             //triangle blue
@@ -165,13 +166,13 @@ struct PaintView: View {
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
                                 if selectFirst {
-                                    firstColor = Color("blue")
+                                    firstColor = "blue"
                                     selectFirst.toggle()
                                 } else if selectSceond {
-                                    secondColor = Color("blue")
+                                    secondColor = "blue"
                                     selectSceond.toggle()
                                 }
-                                resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
                             }
                             
                             // secondary color orange
@@ -187,13 +188,13 @@ struct PaintView: View {
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
                                 if selectFirst {
-                                    firstColor = Color("orange")
+                                    firstColor = "orange"
                                     selectFirst.toggle()
                                 } else if selectSceond {
-                                    secondColor = Color("orange")
+                                    secondColor = "orange"
                                     selectSceond.toggle()
                                 }
-                                resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
                             }
                             
                             // secondary color green
@@ -209,13 +210,13 @@ struct PaintView: View {
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
                                 if selectFirst {
-                                    firstColor = Color("green")
+                                    firstColor = "green"
                                     selectFirst.toggle()
                                 } else if selectSceond {
-                                    secondColor = Color("green")
+                                    secondColor = "green"
                                     selectSceond.toggle()
                                 }
-                                resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
                             }
                             
                             // secondary coloe violet
@@ -231,13 +232,13 @@ struct PaintView: View {
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
                                 if selectFirst {
-                                    firstColor = Color("violet")
+                                    firstColor = "violet"
                                     selectFirst.toggle()
                                 } else if selectSceond {
-                                    secondColor = Color("violet")
+                                    secondColor = "violet"
                                     selectSceond.toggle()
                                 }
-                                resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
                             }
          
                            
@@ -247,6 +248,7 @@ struct PaintView: View {
 
                 
                 // ipad pro 9.7inch and 11inch
+                //############################################################################################################################################
                 if paintGeometry.size.height < 800.0 {
                     // color combiner
                     ZStack{
@@ -257,96 +259,96 @@ struct PaintView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("card"))
                         
-                        HStack{
-                            // first color
-                            if selectFirst {
-                                Image("paint")
-                                    .resizable()
-                                    .renderingMode(.template)
-                                    .foregroundColor(firstColor)
-                                
-                            } else {
-                                ZStack{
-                                    Image("paint")
-                                        .resizable()
-                                        .renderingMode(.template)
-                                        .foregroundColor(firstColor)
-                                        .onTapGesture {
-                                            selectFirst.toggle()
-                                            if selectSceond {
-                                                selectSceond.toggle()
-                                            }
-                                        }
-                                    Text("Choose")
-                                        .foregroundColor(Color("font"))
-                                }
-                            }
-                            
-                            Image(systemName: "plus")
-                            
-                            // second color
-                            if selectSceond {
-                                Image("paint")
-                                    .resizable()
-                                    .renderingMode(.template)
-                                    .foregroundColor(secondColor)
-                            } else {
-                                ZStack{
-                                    Image("paint")
-                                        .resizable()
-                                        .renderingMode(.template)
-                                        .foregroundColor(secondColor)
-                                        .onTapGesture {
-                                            selectSceond.toggle()
-                                            if selectFirst {
-                                                selectFirst.toggle()
-                                            }
-                                        }
-                                    Text("Choose")
-                                        .foregroundColor(Color("font"))
-                                }
-                                
-                            }
-                            
-                            // MIX!!
-                            Button(action: {
-                                myData.resultColor = resultColor
-                                print("MIX button click")
-                                if myData.resultColor == myData.targetColor {
-                                    if myData.count < 10 {
-                                        Sounds2.play(sound: "correct", type: "mp3")
-                                        myData.count += 1
-                                    }
-                                    // set random target color
-                                    var randomColor = getRandomColor()
-                                    if myData.targetColor != randomColor{
-                                        myData.targetColor = randomColor
-                                    } else {
-                                        randomColor = getRandomColor()
-                                        if randomColor == myData.targetColor {
-                                            myData.targetColor = getRandomColor()
-                                        } else {
-                                            myData.targetColor = randomColor
-                                        }
-                                        
-                                    }
-                                } else {
-                                    Sounds2.play(sound: "incorrect", type: "mp3")
-                                }
-                            }) {
-                                HStack {
-                                    Image(systemName: "sum")
-                                    Text("MIX")
-                                }.padding(10.0)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10.0)
-                                        .stroke(lineWidth: 2.0)
-                                )
-                            }.padding(.trailing)
-                            
-                            Spacer()
-                        }
-                        
+//                        HStack{
+//                            // first color
+//                            if selectFirst {
+//                                Image("paint")
+//                                    .resizable()
+//                                    .renderingMode(.template)
+//                                    .foregroundColor(firstColor)
+//
+//                            } else {
+//                                ZStack{
+//                                    Image("paint")
+//                                        .resizable()
+//                                        .renderingMode(.template)
+//                                        .foregroundColor(firstColor)
+//                                        .onTapGesture {
+//                                            selectFirst.toggle()
+//                                            if selectSceond {
+//                                                selectSceond.toggle()
+//                                            }
+//                                        }
+//                                    Text("Choose")
+//                                        .foregroundColor(Color("font"))
+//                                }
+//                            }
+//
+//                            Image(systemName: "plus")
+//
+//                            // second color
+//                            if selectSceond {
+//                                Image("paint")
+//                                    .resizable()
+//                                    .renderingMode(.template)
+//                                    .foregroundColor(secondColor)
+//                            } else {
+//                                ZStack{
+//                                    Image("paint")
+//                                        .resizable()
+//                                        .renderingMode(.template)
+//                                        .foregroundColor(secondColor)
+//                                        .onTapGesture {
+//                                            selectSceond.toggle()
+//                                            if selectFirst {
+//                                                selectFirst.toggle()
+//                                            }
+//                                        }
+//                                    Text("Choose")
+//                                        .foregroundColor(Color("font"))
+//                                }
+//
+//                            }
+//
+//                            // MIX!!
+//                            Button(action: {
+//                                myData.resultColor = resultColor
+//                                print("MIX button click")
+//                                if myData.resultColor == myData.targetColor {
+//                                    if myData.count < 10 {
+//                                        Sounds2.play(sound: "correct", type: "mp3")
+//                                        myData.count += 1
+//                                    }
+//                                    // set random target color
+//                                    var randomColor = getRandomColor()
+//                                    if myData.targetColor != randomColor{
+//                                        myData.targetColor = randomColor
+//                                    } else {
+//                                        randomColor = getRandomColor()
+//                                        if randomColor == myData.targetColor {
+//                                            myData.targetColor = getRandomColor()
+//                                        } else {
+//                                            myData.targetColor = randomColor
+//                                        }
+//
+//                                    }
+//                                } else {
+//                                    Sounds2.play(sound: "incorrect", type: "mp3")
+//                                }
+//                            }) {
+//                                HStack {
+//                                    Image(systemName: "sum")
+//                                    Text("MIX")
+//                                }.padding(10.0)
+//                                .overlay(
+//                                    RoundedRectangle(cornerRadius: 10.0)
+//                                        .stroke(lineWidth: 2.0)
+//                                )
+//                            }.padding(.trailing)
+//
+//                            Spacer()
+//                        }
+                        //##############################################################################################################
                     } // ZStack
                     .frame(minHeight: 200,  maxHeight: 210)
                 } else {
@@ -365,21 +367,153 @@ struct PaintView: View {
                             VStack{
                                 // paint
                                 HStack{
-                                    Image("paint-left")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .padding(.top)
-                                    Image("paint-right")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .padding(.top)
+                                    // first paint
+                                    if selectFirst {
+                                        Image("left-paint-\(firstColor)")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .padding([.top, .leading])
+                                            
+                                    } else {
+                                        if firstColor == "empty" {
+                                            Image("left-paint-\(firstColor)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .padding([.top, .leading])
+                                                .onTapGesture {
+                                                    selectFirst.toggle()
+                                                    if selectSceond {
+                                                        selectSceond.toggle()
+                                                    }
+                                                }
+                                                .padding(.trailing)
+                                        } else {
+                                            Image("left-paint-\(firstColor)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .padding([.top, .leading])
+                                                .onTapGesture {
+                                                    selectFirst.toggle()
+                                                    if selectSceond {
+                                                        selectSceond.toggle()
+                                                    }
+                                                }
+                                        }
+                                            
+                                            
+                                    }
+                                    
+                                    // second paint
+                                    if selectSceond {
+                                        
+                                        Image("right-paint-\(secondColor)")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .padding([.top, .trailing])
+//                                            .brightness(20)
+                                            
+                                        
+                                    
+                                    } else {
+                                        
+                                        if secondColor == "empty" {
+                                            Image("right-paint-\(secondColor)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .padding([.top, .trailing])
+                                                .onTapGesture {
+                                                    selectSceond.toggle()
+                                                    if selectFirst {
+                                                        selectFirst.toggle()
+                                                    }
+                                                }
+                                                .padding(.leading)
+                                        } else {
+                                            Image("right-paint-\(secondColor)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .padding([.top, .trailing])
+                                                .onTapGesture {
+                                                    selectSceond.toggle()
+                                                    if selectFirst {
+                                                        selectFirst.toggle()
+                                                    }
+                                                }
+                                            
+                                        }
+                                    }
                                 }
                                 
                                 
                                 HStack{
                                     Button(action: {
-                                        print("MIX")
-  
+                                       
+                                        myData.count += 1
+                                        
+                                        print("MIX button click")
+                                        print(myData.resultColor)
+                                        print(myData.targetColor)
+                                        if myData.resultColor == myData.targetColor {
+                                            myData.right += 1
+                                            if myData.count < 10 {
+                                                print("correct")
+                                                Sounds2.play(sound: "correct", type: "mp3")
+                                                
+                                            } else {
+                                                // game over
+                                                print("10번째")
+                                                selectFirst = false
+                                                selectSceond = false
+                                                firstColor = "empty"
+                                                secondColor = "empty"
+                                                myData.showModal.toggle()
+                                                Sounds2.play(sound: "clear", type: "mp3")
+                                            }
+                                            // set random target color
+                                            var randomColor = getRandomColor()
+                                            if myData.targetColor != randomColor{
+                                                myData.targetColor = randomColor
+                                            } else {
+                                                randomColor = getRandomColor()
+                                                if randomColor == myData.targetColor {
+                                                    myData.targetColor = getRandomColor()
+                                                } else {
+                                                    myData.targetColor = randomColor
+                                                }
+        
+                                            }
+                                        } else {
+                                            myData.wrong += 1
+                                            Sounds2.play(sound: "incorrect", type: "mp3")
+                                            
+                                            // set random target color
+                                            var randomColor = getRandomColor()
+                                            if myData.targetColor != randomColor{
+                                                myData.targetColor = randomColor
+                                            } else {
+                                                randomColor = getRandomColor()
+                                                if randomColor == myData.targetColor {
+                                                    myData.targetColor = getRandomColor()
+                                                } else {
+                                                    myData.targetColor = randomColor
+                                                }
+        
+                                            }
+                                            
+                                            // game over
+                                            if myData.count == 10 {
+                                                Sounds2.play(sound: "clear", type: "mp3")
+                                                print("10번째")
+                                                selectFirst = false
+                                                selectSceond = false
+                                                firstColor = "empty"
+                                                secondColor = "empty"
+                                                myData.showModal.toggle()
+                                            }
+                                        }
+                                        firstColor = "empty"
+                                        secondColor = "empty"
+                                        myData.resultColor = "empty"
                                     }) {
                                         HStack {
                                             Text("MIX")
@@ -389,11 +523,14 @@ struct PaintView: View {
                                         }
                                         .padding()
                                         .foregroundColor(.white)
-                                        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color("green"),  Color("blue-green")]), startPoint: .leading, endPoint: .trailing))
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color(firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(secondColor)]), startPoint: .leading, endPoint: .trailing))
                                         .cornerRadius(40)
 
                                     }
                                     .padding()
+                                    .sheet(isPresented: $myData.showModal) {
+                                        ClearView(time: myData.getTime())
+                                    }
                                 }
                                 
 //                                // bucket
@@ -580,58 +717,65 @@ struct Arc: Shape {
 }
 
 // mix colors
-func mixColor(first: Color, second: Color) -> Color {
-    let select = Set([first, second])
+func mixColor(first: String, second: String) -> String {
+    let select = Set([Color(first), Color(second)])
     
     switch select {
     //원색
     case Set([Color("yellow"), Color("yellow")]):
-        return Color("yellow")
+        return "yellow"
     case Set([Color("blue"), Color("blue")]):
-        return Color("blue")
+        return "blue"
     case Set([Color("red"), Color("red")]):
-        return Color("red")
+        return "red"
     //2차색
     case Set([Color("yellow"), Color("red")]):
-        return Color("orange")
+        return "orange"
     case Set([Color("yellow"), Color("blue")]):
-        return Color("green")
+        return "green"
     case Set([Color("red"), Color("blue")]):
-        return Color("violet")
+        return "violet"
     //3차색
     case Set([Color("yellow"), Color("green")]):
-        return Color("yellow-green")
+        return "yellow-green"
     case Set([Color("yellow"), Color("orange")]):
-        return Color("yellow-orange")
+        return "yellow-orange"
     case Set([Color("blue"), Color("green")]):
-        return Color("blue-green")
+        return "blue-green"
     case Set([Color("blue"), Color("violet")]):
-        return Color("blue-violet")
+        return "blue-violet"
     case Set([Color("red"), Color("violet")]):
-        return Color("red-violet")
+        return "red-violet"
     case Set([Color("red"), Color("orange")]):
-        return Color("red-orange")
+        return "red-orange"
+    case Set([Color("orange"), Color("orange")]):
+        return "orange"
+    case Set([Color("green"), Color("green")]):
+        return "green"
+    case Set([Color("violet"), Color("violet")]):
+        return "violet"
         
     case Set([Color("blue"), Color("orange")]):
-        return Color("roman-coffe")
+        return "roman-coffe"
     case Set([Color("green"), Color("violet")]):
-        return Color("roman-coffe")
+        return "roman-coffe"
     case Set([Color("yellow"), Color("violet")]):
-        return Color("marigold")
+        return "marigold"
     case Set([Color("green"), Color("orange")]):
-        return Color("marigold")
+        return "marigold"
     case Set([Color("red"), Color("green")]):
-        return Color("tuscany")
+        return "tuscany"
     case Set([Color("orange"), Color("violet")]):
-        return Color("tuscany")
+        return "tuscany"
 
     default:
-        return Color("temp")
+        return "empty"
     }
 }
 
-func getRandomColor() -> Color {
-    Array(Set([ Color("blue-green"), Color("blue-violet"), Color("green"), Color("orange"), Color("red-orange"), Color("red-violet"), Color("violet"), Color("yellow-green"), Color("yellow-orange")]))[0]
+
+func getRandomColor() -> String {
+    Array(Set(["blue-green", "blue-violet", "green", "orange", "red-orange", "red-violet", "violet", "yellow-green", "yellow-orange"]))[0]
 }
 
 struct PaintView_Preview: PreviewProvider {

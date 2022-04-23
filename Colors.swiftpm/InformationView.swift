@@ -23,9 +23,23 @@ struct InformationView: View {
                         .padding()
                     }
                 )
-              
+                
+            }
+            .padding()
+            VStack(alignment: .leading){
+                Text("Developer : Terry Koo")
+                    .font(.title)
+                    
+                Text("Contact : xpflxhfl94@naver.com")
+                    .font(.title)
+                    
             }
             Spacer()
+            Text("Music: https://www.bensound.com")
+                .foregroundColor(.gray)
+                .font(.caption2)
+                .padding()
+
         }
         
         
