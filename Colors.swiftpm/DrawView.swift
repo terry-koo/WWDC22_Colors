@@ -17,7 +17,7 @@ struct DrawView: View {
         GeometryReader{ geometry in
             ZStack{
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color(hue: 1.0, saturation: 0.0, brightness: 0.955), lineWidth: 4)
+                    .stroke(Color("card-foreground"), lineWidth: 4)
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)
                     .frame(minWidth: 0, maxWidth: .infinity)
 
@@ -54,36 +54,45 @@ struct DrawView: View {
                             .font(.title)
                             .fontWeight(.bold)
                     }
+                    
                     Spacer()
-                    // customer message
-                    HStack{
-                        Text(myData.randomMessage)
-                            .font(.system(size: 25))
-                            .foregroundColor(Color("message-font"))
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color("message-box")
-                                )
-                            )
-                            .multilineTextAlignment(.leading)
-                            .padding(.leading)
-                            .offset(y: 19)
-                        Spacer()
-                    }
-                    HStack{
-                        VStack{
-                            Image(myData.randomCustomer)
-                                .resizable()
-                                .frame(height: geometry.size.height * 0.7)
-                                .padding(.leading)
-                        }
-                        VStack{
-                            Image("bucket")
-                                .resizable()
-                                .frame(height: geometry.size.height * 0.3)
-                        }
-                    }
+                    
+                    Image("bucket")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                    
                     Spacer()
+                    
+//                    // customer message
+//                    HStack{
+//                        Text(myData.randomMessage)
+//                            .font(.system(size: 25))
+//                            .foregroundColor(Color("message-font"))
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .fill(Color("message-box")
+//                                )
+//                            )
+//                            .multilineTextAlignment(.leading)
+//                            .padding(.leading)
+//                            .offset(y: 19)
+//                        Spacer()
+//                    }
+//                    HStack{
+//                        VStack{
+//                            Image(myData.randomCustomer)
+//                                .resizable()
+//                                .frame(height: geometry.size.height * 0.7)
+//                                .padding(.leading)
+//                        }
+//                        VStack{
+//                            Image("bucket")
+//                                .resizable()
+//                                .frame(height: geometry.size.height * 0.3)
+//                        }
+//                    }
+//                    Spacer()
                 }
             } // ZStack
             .padding([.top, .leading, .bottom])
