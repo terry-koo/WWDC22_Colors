@@ -15,7 +15,10 @@ struct DrawView: View {
     var body: some View {
         
         GeometryReader{ geometry in
+           
+            
             ZStack{
+                
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color("card-foreground"), lineWidth: 4)
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)
@@ -58,29 +61,63 @@ struct DrawView: View {
                     Spacer()
                     
                     ZStack {
-                        if geometry.size.height < 800.0 {
+                        
+                        if geometry.size.height < 749.0 {
                             Circle()
                                 .fill(Color(myData.targetColor))
                                 .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.6)
-                                .offset(x: 100 , y: -180)
+                                .offset(x: 100 , y: -160)
+                            if myData.resultColor == "empty" {
+                                Image("bucket-\(myData.resultColor)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                    .offset(x: -85, y: -27)
+                            } else {
+                                Image("bucket-\(myData.resultColor)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                    .offset(x: -5, y: 20)
+                                }
+                        } else if geometry.size.height < 800 {
+                            Circle()
+                                .fill(Color(myData.targetColor))
+                                .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.6)
+                                .offset(x: 100 , y: -160)
+                            if myData.resultColor == "empty" {
+                                Image("bucket-\(myData.resultColor)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                    .offset(x: -85, y: -27)
+                            } else {
+                                Image("bucket-\(myData.resultColor)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                    .offset(x: 10, y: 25)
+                                }
                         } else {
                             Circle()
                                 .fill(Color(myData.targetColor))
-                                .frame(width: geometry.size.width * 0.6, height: geometry.size.width * 0.6)
+                                .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
                                 .offset(x: 100 , y: -200)
+                            if myData.resultColor == "empty" {
+                                Image("bucket-\(myData.resultColor)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                    .offset(x: -85, y: -27)
+                            } else {
+                                Image("bucket-\(myData.resultColor)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                    .offset(x: 25, y: 35)
+                                }
                         }
-                        if myData.resultColor == "empty" {
-                            Image("bucket-\(myData.resultColor)")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding()
-                                .offset(x: -110, y: -65)
-                        } else {
-                        Image("bucket-\(myData.resultColor)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding()
-                        }
+                        
                     }
                     .padding(.top)
                 

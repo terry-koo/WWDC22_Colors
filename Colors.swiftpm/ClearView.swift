@@ -14,9 +14,9 @@ struct ClearView: View {
     
        
        var body: some View {
-
-               
-                   VStack{
+           
+           GeometryReader { geometry in
+               VStack{
                        Text("All The Paint Is Out Of Stock!")
                            .font(.largeTitle)
                            .fontWeight(.heavy)
@@ -26,9 +26,15 @@ struct ClearView: View {
                            Image(myData.randomRich)
                                .padding()
                        } else {
+                           if geometry.size.height < 800 {
                            Image("closed")
                                .resizable()
-                               .frame(width: 600, height: 550, alignment: .center)
+                               .frame(width: 360, height: 310, alignment: .center)
+                           } else {
+                               Image("closed")
+                                   .resizable()
+                                   .frame(width: 600, height: 550, alignment: .center)
+                           }
                        }
                        HStack{
                            Image(systemName: "timer")
@@ -77,6 +83,10 @@ struct ClearView: View {
                            .interactiveDismissDisabled(!accept)
                        }
                    }
+               .frame(width: geometry.size.width)
+                   
+           }
+           
        }
 }
 
