@@ -53,7 +53,7 @@ struct DrawView: View {
                         }
                     }
                     HStack{
-                        Text("Left Customer : \(myData.count) / 10")
+                        Text("Left Question : \(myData.count) / 10")
                             .font(.title)
                             .fontWeight(.bold)
                     }
@@ -73,12 +73,14 @@ struct DrawView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding()
                                     .offset(x: -85, y: -27)
+                                    .shadow(color: .gray, radius: 1, x: 1, y: -1)
                             } else {
                                 Image("bucket-\(myData.resultColor)")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding()
                                     .offset(x: -5, y: 20)
+                                    .shadow(color: .gray, radius: 1, x: 1, y: -1)
                                 }
                         } else if geometry.size.height < 800 {
                             Circle()
@@ -91,17 +93,19 @@ struct DrawView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding()
                                     .offset(x: -85, y: -27)
+                                    .shadow(color: .gray, radius: 1, x: 1, y: -1)
                             } else {
                                 Image("bucket-\(myData.resultColor)")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding()
                                     .offset(x: 10, y: 25)
+                                    .shadow(color: .gray, radius: 1, x: 1, y: -1)
                                 }
                         } else {
                             Circle()
                                 .fill(Color(myData.targetColor))
-                                .frame(width: geometry.size.width * 0.4, height: geometry.size.width * 0.4)
+                                .frame(width: geometry.size.width * 0.5, height: geometry.size.width * 0.5)
                                 .offset(x: 100 , y: -200)
                             if myData.resultColor == "empty" {
                                 Image("bucket-\(myData.resultColor)")
@@ -109,12 +113,15 @@ struct DrawView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .padding()
                                     .offset(x: -85, y: -27)
+                                    .shadow(color: .gray, radius: 1, x: 1, y: -1)
                             } else {
                                 Image("bucket-\(myData.resultColor)")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .padding()
-                                    .offset(x: 25, y: 35)
+                                    .offset(x: 0, y: 50)
+                                    .frame(width: 600, height: 650, alignment: .leading)
+                                    .shadow(color: .gray, radius: 1, x: 1, y: -1)
                                 }
                         }
                         

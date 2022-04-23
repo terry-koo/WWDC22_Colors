@@ -259,9 +259,9 @@ struct PaintView: View {
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .leading])
-                                            
+      
                                     } else {
-                                       
+                                        ZStack{
                                             Image("left-paint-\(firstColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
@@ -272,6 +272,8 @@ struct PaintView: View {
                                                         selectSceond.toggle()
                                                     }
                                                 }
+                                            Text("Choose")
+                                        }
                                             
                                     }
                                     
@@ -284,7 +286,7 @@ struct PaintView: View {
                                             .padding([.top, .trailing])
              
                                     } else {
-                                        
+                                        ZStack{
                                             Image("right-paint-\(secondColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
@@ -295,6 +297,8 @@ struct PaintView: View {
                                                         selectFirst.toggle()
                                                     }
                                                 }
+                                            Text("Choose")
+                                        }
                                     }
                                 }
                                 
@@ -419,6 +423,7 @@ struct PaintView: View {
                                             
                                     } else {
                                        
+                                        ZStack{
                                             Image("left-paint-\(firstColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
@@ -429,7 +434,12 @@ struct PaintView: View {
                                                         selectSceond.toggle()
                                                     }
                                                 }
-                                            
+                                            if firstColor == "empty"{
+                                                Text("Choose")
+                                                    .offset(x: -10, y: 40 )
+                                            }
+                                        }
+    
                                     }
                                     
                                     // second paint
@@ -442,6 +452,7 @@ struct PaintView: View {
              
                                     } else {
                                         
+                                        ZStack{
                                             Image("right-paint-\(secondColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
@@ -452,6 +463,11 @@ struct PaintView: View {
                                                         selectFirst.toggle()
                                                     }
                                                 }
+                                            if secondColor == "empty"{
+                                                Text("Choose")
+                                                    .offset(x: 10, y: 40 )
+                                            }
+                                        }
                                     }
                                 }
                                 

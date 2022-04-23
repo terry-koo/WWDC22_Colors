@@ -21,7 +21,7 @@ class Sounds {
                
                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                audioPlayer?.numberOfLoops = -1
-               audioPlayer?.volume = 0.05
+               audioPlayer?.volume = 0.04
                audioPlayer?.play()
            } catch {
                print("Error playing sound")
