@@ -1,4 +1,5 @@
 import SwiftUI
+//import AlertToast
 
 struct PaintView: View {
     @State private var canTouchDown = true
@@ -8,6 +9,7 @@ struct PaintView: View {
     @State private var selectFirst = false
     @State private var selectSceond = false
     @EnvironmentObject var myData: MyData
+    @State private var showToast = false
     
 
     
@@ -19,7 +21,7 @@ struct PaintView: View {
             VStack{
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color(hue: 1.0, saturation: 0.0, brightness: 0.955), lineWidth: 4)
+                            .stroke(Color("card-foreground"), lineWidth: 4)
                             .shadow(color: .gray, radius: 3, x: 3, y: 3)
                             .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
      
@@ -57,6 +59,17 @@ struct PaintView: View {
                               .stroke(Color("orange"), lineWidth: 50)
        
                         }
+//                        .onTapGesture {
+//                            .toast(isPresenting: $showToast){
+//                                
+//                                // `.alert` is the default displayMode
+//                                AlertToast(type: .regular, title: "Message Sent!")
+//                                
+//                                //Choose .hud to toast alert from the top of the screen
+//                                //AlertToast(displayMode: .hud, type: .regular, title: "Message Sent!")
+//                            }
+//                        }
+
                         
                         // circle
                         GeometryReader{ geometry in
@@ -341,7 +354,7 @@ struct PaintView: View {
                     // color combiner
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color(hue: 1.0, saturation: 0.0, brightness: 0.955), lineWidth: 4)
+                            .stroke(Color("card-foreground"), lineWidth: 4)
                             .shadow(color: .gray, radius: 3, x: 3, y: 3)
                         
                         RoundedRectangle(cornerRadius: 20)
@@ -355,65 +368,88 @@ struct PaintView: View {
                                     Image("paint-left")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
+                                        .padding(.top)
                                     Image("paint-right")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
+                                        .padding(.top)
                                 }
                                 
-                                // bucket
+                                
                                 HStack{
-                                    Image("bucket")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .offset(x: 17)
-                                        
+                                    Button(action: {
+                                        print("MIX")
+  
+                                    }) {
+                                        HStack {
+                                            Text("MIX")
+                                                .fontWeight(.semibold)
+                                                .font(.title)
+                                                .frame(minWidth: 270)
+                                        }
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.purple, Color("green"),  Color("blue-green")]), startPoint: .leading, endPoint: .trailing))
+                                        .cornerRadius(40)
+
+                                    }
+                                    .padding()
                                 }
+                                
+//                                // bucket
+//                                HStack{
+//                                    Image("bucket")
+//                                        .resizable()
+//                                        .aspectRatio(contentMode: .fit)
+//                                        .offset(x: 17)
+                                        
+//                                }
                                 
                             }
                             
-                            VStack{
-                                
-                                ZStack{
-                                    // Staff message
-                                    VStack{
-                                        HStack{
-                                            Spacer()
-                                            VStack{
-                                                Text(" Ready to sell? ")
-                                                    .foregroundColor(Color("message-font"))
-                                                    .background(
-                                                        RoundedRectangle(cornerRadius: 10)
-                                                            .fill(Color("message-box")
-                                                        )
-                                                    )
-                                                Text(" Push SELL button ")
-                                                    .foregroundColor(Color("message-font"))
-                                                    .background(
-                                                        RoundedRectangle(cornerRadius: 10)
-                                                            .fill(Color("message-box")
-                                                        )
-                                                    )
-                                            }
-                                            
-                                        }
-                                        Spacer()
-                                    }
-                                    Image("staff1")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                }
-                                Button(action: {
-                                    print("button click")
-                                    myData.showModal.toggle()
-                                }, label: {
-                                    Text("SELL")
-                                })
-                                // 모달창
-                                .sheet(isPresented: $myData.showModal) {
-                                    ClearView()
-                                }
-                                
-                            }
+//                            VStack{
+//
+//                                ZStack{
+//                                    // Staff message
+//                                    VStack{
+//                                        HStack{
+//                                            Spacer()
+//                                            VStack{
+//                                                Text(" Ready to sell? ")
+//                                                    .foregroundColor(Color("message-font"))
+//                                                    .background(
+//                                                        RoundedRectangle(cornerRadius: 10)
+//                                                            .fill(Color("message-box")
+//                                                        )
+//                                                    )
+//                                                Text(" Push SELL button ")
+//                                                    .foregroundColor(Color("message-font"))
+//                                                    .background(
+//                                                        RoundedRectangle(cornerRadius: 10)
+//                                                            .fill(Color("message-box")
+//                                                        )
+//                                                    )
+//                                            }
+//
+//                                        }
+//                                        Spacer()
+//                                    }
+//                                    Image("staff1")
+//                                        .resizable()
+//                                        .aspectRatio(contentMode: .fit)
+//                                }
+//                                Button(action: {
+//                                    print("button click")
+//                                    myData.showModal.toggle()
+//                                }, label: {
+//                                    Text("SELL")
+//                                })
+//                                // 모달창
+//                                .sheet(isPresented: $myData.showModal) {
+//                                    ClearView()
+//                                }
+//
+//                            }
                         }
                         
                         // old version
