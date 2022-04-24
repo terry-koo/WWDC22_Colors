@@ -92,7 +92,7 @@ struct InformationView: View {
                 }
             }
             Spacer()
-            Text("Music: https://www.bensound.com")
+            Text("Music: https://www.bensound.com\nDesigned by Freepik")
                 .foregroundColor(.gray)
                 .font(.caption2)
                 .padding()
