@@ -87,7 +87,7 @@ struct TipsView: View {
                                    .aspectRatio(contentMode: .fit)
                            }
                            VStack(alignment: .leading){
-                               Text("\(geometry.size.height)If you combine the primary colors, \nyou get a secondary color.")
+                               Text("If you combine the primary colors, \nyou get a secondary color.")
                                    .font(.title2)
                                    .padding(.bottom)
                                

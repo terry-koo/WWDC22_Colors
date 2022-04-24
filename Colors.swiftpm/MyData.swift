@@ -21,7 +21,7 @@ class MyData: ObservableObject {
     @Published var randomMessage = " Give me the same color paint on the right! "
     @Published var showModal = false
     @Published var showInformation = false
-    @Published var randomRich = Array(Set(["rich1","rich2","rich3","rich4","rich5"]))[0]
+    @Published var randomRich = Array(Set(["rich1","rich2","rich3","rich4"]))[0]
     @Published var showTips = false
     
     

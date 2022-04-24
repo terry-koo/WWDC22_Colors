@@ -167,70 +167,114 @@ struct PaintView: View {
                             }
                             
                             // secondary color orange
-                            Path { path in
-                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
-                                path.closeSubpath()
-                            }
-                            //.stroke()
-                            .fill(Color("orange"))
-                            .onTapGesture {
-                                Sounds2.play(sound: "paint", type: "mp3")
-                                if selectFirst {
-                                    firstColor = "orange"
-                                    selectFirst.toggle()
-                                } else if selectSceond {
-                                    secondColor = "orange"
-                                    selectSceond.toggle()
+                            if myData.targetColor == "orange" {
+                                Path { path in
+                                    path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.closeSubpath()
                                 }
-                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                //.stroke()
+                                .fill(Color("orange"))
+                                .opacity(0.2)
+                                
+                            } else {
+                                Path { path in
+                                    path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.closeSubpath()
+                                }
+                                //.stroke()
+                                .fill(Color("orange"))
+                                .onTapGesture {
+                                    Sounds2.play(sound: "paint", type: "mp3")
+                                    if selectFirst {
+                                        firstColor = "orange"
+                                        selectFirst.toggle()
+                                    } else if selectSceond {
+                                        secondColor = "orange"
+                                        selectSceond.toggle()
+                                    }
+                                    myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                }
                             }
                             
                             // secondary color green
-                            Path { path in
-                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
-                                
-                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
-                                path.closeSubpath()
-                            }
-                            .fill(Color("green"))
-                            .onTapGesture {
-                                Sounds2.play(sound: "paint", type: "mp3")
-                                if selectFirst {
-                                    firstColor = "green"
-                                    selectFirst.toggle()
-                                } else if selectSceond {
-                                    secondColor = "green"
-                                    selectSceond.toggle()
+                            if myData.targetColor == "green" {
+                                Path { path in
+                                    path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                    
+                                    path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.closeSubpath()
                                 }
-                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                .fill(Color("green"))
+                                .opacity(0.2)
+                                
+                            } else {
+                                Path { path in
+                                    path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                    
+                                    path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                    path.closeSubpath()
+                                }
+                                .fill(Color("green"))
+                                .onTapGesture {
+                                    Sounds2.play(sound: "paint", type: "mp3")
+                                    if selectFirst {
+                                        firstColor = "green"
+                                        selectFirst.toggle()
+                                    } else if selectSceond {
+                                        secondColor = "green"
+                                        selectSceond.toggle()
+                                    }
+                                    myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                }
                             }
                             
                             // secondary coloe violet
-                            Path { path in
-                                path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 2 * weight))
-                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
-                                path.closeSubpath()
-                            }
-                            //.stroke()
-                            .fill(Color("violet"))
-                            .onTapGesture {
-                                Sounds2.play(sound: "paint", type: "mp3")
-                                if selectFirst {
-                                    firstColor = "violet"
-                                    selectFirst.toggle()
-                                } else if selectSceond {
-                                    secondColor = "violet"
-                                    selectSceond.toggle()
+                            if myData.targetColor == "violet" {
+                                Path { path in
+                                    path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 2 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.closeSubpath()
                                 }
-                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                //.stroke()
+                                .fill(Color("violet"))
+                                .opacity(0.2)
+                                
+                            } else {
+                                Path { path in
+                                    path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 2 * weight))
+                                    path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                    path.closeSubpath()
+                                }
+                                //.stroke()
+                                .fill(Color("violet"))
+                                .onTapGesture {
+                                    Sounds2.play(sound: "paint", type: "mp3")
+                                    if selectFirst {
+                                        firstColor = "violet"
+                                        selectFirst.toggle()
+                                    } else if selectSceond {
+                                        secondColor = "violet"
+                                        selectSceond.toggle()
+                                    }
+                                    myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                }
                             }
+                            
+                        
          
                            
                         } // GeometryReader

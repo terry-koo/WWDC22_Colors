@@ -19,7 +19,7 @@ class Sounds2 {
                _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: .default, options: .mixWithOthers)
                //Load & play sound
                audioPlayer2 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-               audioPlayer2?.volume = 0.1
+               audioPlayer2?.volume = 0.2
                audioPlayer2?.play()
            } catch {
                print("Error playing sound")
