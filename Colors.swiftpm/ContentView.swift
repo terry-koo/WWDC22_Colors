@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var myData = MyData()
-    @State var tutorial: Int = 0
+    @State var tutorial: Double = 0
     @State var tutorialFin: Bool = false
     
     
@@ -40,6 +40,7 @@ struct ContentView: View {
                 Tutorial0()
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
+                        myData.targetColor = "yellow-green"
                         tutorial += 1
                     }
             } else if tutorial == 1{
@@ -100,6 +101,7 @@ struct ContentView: View {
                 Tutorial10()
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
+                        myData.firstColor = "yellow"
                         tutorial += 1
                     }
             } else if tutorial == 11{
@@ -108,11 +110,20 @@ struct ContentView: View {
                     .onTapGesture {
                         tutorial += 1
                     }
-            } else if tutorial == 12{
+            } else if tutorial == 12 || tutorial == 12.5 || tutorial == 12.7 {
                 Tutorial12()
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
-                        tutorial += 1
+                        if tutorial == 12 {
+                            tutorial += 0.5
+                            myData.selectSecond = true
+                            
+                        } else if tutorial == 12.5{
+                            tutorial += 0.5
+                            myData.secondColor = "green"
+                            myData.resultColor = "yellow-green"
+                            myData.selectSecond = false
+                        }
                         myData.value = 0
                     }
             } else if tutorial == 13{
@@ -143,6 +154,12 @@ struct ContentView: View {
                         tutorial += 1
                         myData.value = 0
                         myData.showTips = true
+                        myData.firstColor = "empty"
+                        myData.secondColor = "empty"
+                        myData.resultColor = "empty"
+                        myData.count = 0
+                        myData.right = 0
+                        myData.targetColor = Array(Set(["blue-green", "blue-violet", "green", "orange", "red-orange", "red-violet", "violet", "yellow-green", "yellow-orange"]))[0]
                     }
                     
             }

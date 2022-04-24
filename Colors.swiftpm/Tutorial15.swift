@@ -11,7 +11,7 @@ struct Tutorial15: View {
             HStack{
                 
                 VStack{
-                    Text(" \"Don't forget that you have to make the paint \n  the customer wants\" ")
+                    Text(" \"Don’t forget to mix the paint the customer wants!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

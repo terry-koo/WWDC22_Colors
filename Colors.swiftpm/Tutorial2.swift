@@ -20,7 +20,7 @@ struct Tutorial2: View {
             HStack{
                 
                 VStack{
-                    Text(" \"Sure!\" ")
+                    Text(" \"Sure, please wait a moment\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -28,17 +28,7 @@ struct Tutorial2: View {
                             )
                         )
                         .font(.largeTitle)
-                        .padding()
-                    
-                    Text(" \"Please wait a moment\" ")
-                        .foregroundColor(Color("message-font"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("message-box")
-                            )
-                        )
-                        .font(.largeTitle)
-                    
+
                     
                     
                 }

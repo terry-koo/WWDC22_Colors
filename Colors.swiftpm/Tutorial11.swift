@@ -29,7 +29,7 @@ struct Tutorial11: View {
                                 .opacity(0.85)
                            
                         } // ZStack
-                        Text(" \"Remember, the color in the doughnut-shaped circle is the color you can make, not the color you can choose\" ")
+                        Text(" \"Remember, the color in the outer circle is the guide. You cannot select any color from there\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -64,7 +64,7 @@ struct Tutorial11: View {
                                 .opacity(0.85)
                            
                         } // ZStack
-                        Text(" \"Remember, the color in the doughnut-shaped circle is the color you can make, not the color you can choose\" ")
+                        Text(" \"Remember, the color in the outer circle is the guide. You cannot select any color from there\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -99,7 +99,7 @@ struct Tutorial11: View {
                                 .opacity(0.85)
                            
                         } // ZStack
-                        Text(" \"Remember, the color in the doughnut-shaped circle is the color you can make, not the color you can choose\" ")
+                        Text(" \"Remember, the color in the outer circle is the guide. You cannot select any color from there\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)

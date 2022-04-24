@@ -25,7 +25,7 @@ struct Tutorial6: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"First, if you look to the left, can you see the empty paint bin and the circle behind it?\" ")
+                    Text(" \"If you look to the left, You will see the empty paint bin and the circle behind it\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -56,7 +56,7 @@ struct Tutorial6: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"First, if you look to the left, can you see the empty paint bin and the circle behind it?\" ")
+                    Text(" \"If you look to the left. You will see the empty paint bin and the circle behind it\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

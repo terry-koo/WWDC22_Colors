@@ -25,7 +25,7 @@ struct Tutorial13: View {
                         
                     VStack{
                    
-                        Text(" \"If you want to change the color you chose, tap the bucket again and choose the color\" ")
+                        Text(" \"If you want to change the color you’ve selected, tap the bucket again and select the other color\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -35,7 +35,7 @@ struct Tutorial13: View {
                             .font(.largeTitle)
                             .padding()
                         
-                        Text(" \"You can fix it any time before you press the SELL button\" ")
+                        Text(" \"You can reselect anytime before you tap the SELL button\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -67,7 +67,7 @@ struct Tutorial13: View {
                         
                     VStack{
                    
-                        Text(" \"If you want to change the color you chose, tap the bucket again and choose the color\" ")
+                        Text(" \"If you want to change the color you’ve selected, tap the bucket again and select the other color\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -77,7 +77,7 @@ struct Tutorial13: View {
                             .font(.largeTitle)
                             .padding()
                         
-                        Text(" \"You can fix it any time before you press the SELL button\" ")
+                        Text(" \"You can reselect anytime before you tap the SELL button\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -110,7 +110,7 @@ struct Tutorial13: View {
                         
                     VStack{
                    
-                        Text(" \"If you want to change the color you chose, tap the bucket again and choose the color\" ")
+                        Text(" \"If you want to change the color you’ve selected, tap the bucket again and select the other color\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -120,7 +120,7 @@ struct Tutorial13: View {
                             .font(.largeTitle)
                             .padding()
                         
-                        Text(" \"You can fix it any time before you press the SELL button\" ")
+                        Text(" \"You can reselect anytime before you tap the SELL button\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -143,9 +143,9 @@ struct Tutorial13: View {
 }
 
 
-struct Tutorial13_Preview: PreviewProvider {
+struct Tutorial14_Preview: PreviewProvider {
     static var previews: some View {
-        Tutorial13()
+        Tutorial14()
             .previewInterfaceOrientation(.landscapeRight)
          
     }

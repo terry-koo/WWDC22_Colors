@@ -3,10 +3,10 @@ import SwiftUI
 
 struct PaintView: View {
     @State private var canTouchDown = true
-    @State private var firstColor = "empty"
-    @State private var secondColor = "empty"
-    @State private var selectFirst = false
-    @State private var selectSceond = false
+//    @State private var firstColor = "empty"
+//    @State private var secondColor = "empty"
+//    @State private var myData.selectFirst = false
+//    @State private var myData.selectSecond = false
     @EnvironmentObject var myData: MyData
 
 
@@ -110,14 +110,14 @@ struct PaintView: View {
                             .fill(Color("yellow"))
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
-                                if selectFirst {
-                                    firstColor = "yellow"
-                                    selectFirst.toggle()
-                                } else if selectSceond {
-                                    secondColor = "yellow"
-                                    selectSceond.toggle()
+                                if myData.selectFirst {
+                                    myData.firstColor = "yellow"
+                                    myData.selectFirst.toggle()
+                                } else if myData.selectSecond {
+                                    myData.secondColor = "yellow"
+                                    myData.selectSecond.toggle()
                                 }
-                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: myData.firstColor, second: myData.secondColor)
                             }
                             
                             // triangle red
@@ -133,15 +133,15 @@ struct PaintView: View {
                             .fill(Color("red"))
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
-                                if selectFirst {
-                                    firstColor = "red"
-                                    selectFirst.toggle()
-                                } else if selectSceond {
-                                    secondColor = "red"
-                                    selectSceond.toggle()
+                                if myData.selectFirst {
+                                    myData.firstColor = "red"
+                                    myData.selectFirst.toggle()
+                                } else if myData.selectSecond {
+                                    myData.secondColor = "red"
+                                    myData.selectSecond.toggle()
                                 }
                                 
-                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: myData.firstColor, second: myData.secondColor)
                             }
                             
                             //triangle blue
@@ -156,14 +156,14 @@ struct PaintView: View {
                             .fill(Color("blue"))
                             .onTapGesture {
                                 Sounds2.play(sound: "paint", type: "mp3")
-                                if selectFirst {
-                                    firstColor = "blue"
-                                    selectFirst.toggle()
-                                } else if selectSceond {
-                                    secondColor = "blue"
-                                    selectSceond.toggle()
+                                if myData.selectFirst {
+                                    myData.firstColor = "blue"
+                                    myData.selectFirst.toggle()
+                                } else if myData.selectSecond {
+                                    myData.secondColor = "blue"
+                                    myData.selectSecond.toggle()
                                 }
-                                myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                myData.resultColor = mixColor(first: myData.firstColor, second: myData.secondColor)
                             }
                             
                             // secondary color orange
@@ -191,14 +191,14 @@ struct PaintView: View {
                                 .fill(Color("orange"))
                                 .onTapGesture {
                                     Sounds2.play(sound: "paint", type: "mp3")
-                                    if selectFirst {
-                                        firstColor = "orange"
-                                        selectFirst.toggle()
-                                    } else if selectSceond {
-                                        secondColor = "orange"
-                                        selectSceond.toggle()
+                                    if myData.selectFirst {
+                                        myData.firstColor = "orange"
+                                        myData.selectFirst.toggle()
+                                    } else if myData.selectSecond {
+                                        myData.secondColor = "orange"
+                                        myData.selectSecond.toggle()
                                     }
-                                    myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                    myData.resultColor = mixColor(first: myData.firstColor, second: myData.secondColor)
                                 }
                             }
                             
@@ -227,14 +227,14 @@ struct PaintView: View {
                                 .fill(Color("green"))
                                 .onTapGesture {
                                     Sounds2.play(sound: "paint", type: "mp3")
-                                    if selectFirst {
-                                        firstColor = "green"
-                                        selectFirst.toggle()
-                                    } else if selectSceond {
-                                        secondColor = "green"
-                                        selectSceond.toggle()
+                                    if myData.selectFirst {
+                                        myData.firstColor = "green"
+                                        myData.selectFirst.toggle()
+                                    } else if myData.selectSecond {
+                                        myData.secondColor = "green"
+                                        myData.selectSecond.toggle()
                                     }
-                                    myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                    myData.resultColor = mixColor(first: myData.firstColor, second: myData.secondColor)
                                 }
                             }
                             
@@ -263,14 +263,14 @@ struct PaintView: View {
                                 .fill(Color("violet"))
                                 .onTapGesture {
                                     Sounds2.play(sound: "paint", type: "mp3")
-                                    if selectFirst {
-                                        firstColor = "violet"
-                                        selectFirst.toggle()
-                                    } else if selectSceond {
-                                        secondColor = "violet"
-                                        selectSceond.toggle()
+                                    if myData.selectFirst {
+                                        myData.firstColor = "violet"
+                                        myData.selectFirst.toggle()
+                                    } else if myData.selectSecond {
+                                        myData.secondColor = "violet"
+                                        myData.selectSecond.toggle()
                                     }
-                                    myData.resultColor = mixColor(first: firstColor, second: secondColor)
+                                    myData.resultColor = mixColor(first: myData.firstColor, second: myData.secondColor)
                                 }
                             }
                             
@@ -300,51 +300,51 @@ struct PaintView: View {
                                 // paint
                                 HStack{
                                     // first paint
-                                    if selectFirst {
-                                        Image("left-paint-\(firstColor)")
+                                    if myData.selectFirst {
+                                        Image("left-paint-\(myData.firstColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .leading])
       
                                     } else {
                                         ZStack{
-                                            Image("left-paint-\(firstColor)")
+                                            Image("left-paint-\(myData.firstColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .padding([.top, .leading])
                                                 .onTapGesture {
-                                                    selectFirst.toggle()
-                                                    if selectSceond {
-                                                        selectSceond.toggle()
+                                                    myData.selectFirst.toggle()
+                                                    if myData.selectSecond {
+                                                        myData.selectSecond.toggle()
                                                     }
                                                 }
-                                            Text("Choose")
+                                            Text("select")
                                                 .offset(y: 20)
                                         }
                                             
                                     }
                                     
                                     // second paint
-                                    if selectSceond {
+                                    if myData.selectSecond {
                                         
-                                        Image("right-paint-\(secondColor)")
+                                        Image("right-paint-\(myData.secondColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .trailing])
              
                                     } else {
                                         ZStack{
-                                            Image("right-paint-\(secondColor)")
+                                            Image("right-paint-\(myData.secondColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .padding([.top, .trailing])
                                                 .onTapGesture {
-                                                    selectSceond.toggle()
-                                                    if selectFirst {
-                                                        selectFirst.toggle()
+                                                    myData.selectSecond.toggle()
+                                                    if myData.selectFirst {
+                                                        myData.selectFirst.toggle()
                                                     }
                                                 }
-                                            Text("Choose")
+                                            Text("select")
                                                 .offset(y: 20)
                                         }
                                     }
@@ -353,69 +353,73 @@ struct PaintView: View {
                                 
                                 HStack{
                                     Button(action: {
-                                        myData.count += 1
                                         
-                                        if myData.resultColor == myData.targetColor {
-                                            myData.right += 1
-                                            if myData.count < 10 {
-                                                print("correct")
-                                                Sounds2.play(sound: "correct", type: "mp3")
-                                                
-                                            } else {
-                                                // game over
-                                                print("10번째")
-                                                selectFirst = false
-                                                selectSceond = false
-                                                firstColor = "empty"
-                                                secondColor = "empty"
-                                                myData.showModal.toggle()
-                                                Sounds2.play(sound: "clear", type: "mp3")
-                                            }
-                                            // set random target color
-                                            var randomColor = getRandomColor()
-                                            if myData.targetColor != randomColor{
-                                                myData.targetColor = randomColor
-                                            } else {
-                                                randomColor = getRandomColor()
-                                                if randomColor == myData.targetColor {
-                                                    myData.targetColor = getRandomColor()
-                                                } else {
-                                                    myData.targetColor = randomColor
-                                                }
-        
-                                            }
-                                        } else {
-                                            myData.wrong += 1
-                                            Sounds2.play(sound: "incorrect", type: "mp3")
-                                            
-                                            // set random target color
-                                            var randomColor = getRandomColor()
-                                            if myData.targetColor != randomColor{
-                                                myData.targetColor = randomColor
-                                            } else {
-                                                randomColor = getRandomColor()
-                                                if randomColor == myData.targetColor {
-                                                    myData.targetColor = getRandomColor()
-                                                } else {
-                                                    myData.targetColor = randomColor
-                                                }
-        
-                                            }
-                                            
-                                            // game over
-                                            if myData.count == 10 {
-                                                Sounds2.play(sound: "clear", type: "mp3")
-                                                print("10번째")
-                                                selectFirst = false
-                                                selectSceond = false
-                                                firstColor = "empty"
-                                                secondColor = "empty"
-                                                myData.showModal.toggle()
-                                            }
-                                        }
-                                        firstColor = "empty"
-                                        secondColor = "empty"
-                                        myData.resultColor = "empty"
+                                         myData.count += 1
+                                         
+                                         print("MIX button click")
+                                         print(myData.resultColor)
+                                         print(myData.targetColor)
+                                         if myData.resultColor == myData.targetColor {
+                                             myData.right += 1
+                                             if myData.count < 7 {
+                                                 print("correct")
+                                                 Sounds2.play(sound: "correct", type: "mp3")
+                                                 
+                                             } else {
+                                                 // game over
+                                                 print("7번째")
+                                                 myData.selectFirst = false
+                                                 myData.selectSecond = false
+                                                 myData.firstColor = "empty"
+                                                 myData.secondColor = "empty"
+                                                 myData.showModal.toggle()
+                                                 Sounds2.play(sound: "clear", type: "mp3")
+                                             }
+                                             // set random target color
+                                             var randomColor = getRandomColor()
+                                             if myData.targetColor != randomColor{
+                                                 myData.targetColor = randomColor
+                                             } else {
+                                                 randomColor = getRandomColor()
+                                                 if randomColor == myData.targetColor {
+                                                     myData.targetColor = getRandomColor()
+                                                 } else {
+                                                     myData.targetColor = randomColor
+                                                 }
+         
+                                             }
+                                         } else {
+                                             myData.wrong += 1
+                                             Sounds2.play(sound: "incorrect", type: "mp3")
+                                             
+                                             // set random target color
+                                             var randomColor = getRandomColor()
+                                             if myData.targetColor != randomColor{
+                                                 myData.targetColor = randomColor
+                                             } else {
+                                                 randomColor = getRandomColor()
+                                                 if randomColor == myData.targetColor {
+                                                     myData.targetColor = getRandomColor()
+                                                 } else {
+                                                     myData.targetColor = randomColor
+                                                 }
+         
+                                             }
+                                             
+                                             // game over
+                                             if myData.count == 7 {
+                                                 Sounds2.play(sound: "clear", type: "mp3")
+                                                 print("7번째")
+                                                 myData.selectFirst = false
+                                                 myData.selectSecond = false
+                                                 myData.firstColor = "empty"
+                                                 myData.secondColor = "empty"
+                                                 myData.showModal.toggle()
+                                             }
+                                         }
+                                         myData.firstColor = "empty"
+                                         myData.secondColor = "empty"
+                                         myData.resultColor = "empty"
                                     }) {
                                         HStack {
                                             Text("SELL")
@@ -425,7 +429,7 @@ struct PaintView: View {
                                         }
                                         .padding()
                                         .foregroundColor(.white)
-                                        .background(LinearGradient(gradient: Gradient(colors: [Color(firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(secondColor)]), startPoint: .leading, endPoint: .trailing))
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color(myData.firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(myData.secondColor)]), startPoint: .leading, endPoint: .trailing))
                                         .cornerRadius(40)
 
                                     }
@@ -460,8 +464,8 @@ struct PaintView: View {
                                 // paint
                                 HStack{
                                     // first paint
-                                    if selectFirst {
-                                        Image("left-paint-\(firstColor)")
+                                    if myData.selectFirst {
+                                        Image("left-paint-\(myData.firstColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .leading])
@@ -469,24 +473,24 @@ struct PaintView: View {
                                     } else {
                                        
                                         ZStack{
-                                            Image("left-paint-\(firstColor)")
+                                            Image("left-paint-\(myData.firstColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .padding([.top, .leading])
                                                 .onTapGesture {
-                                                    selectFirst.toggle()
-                                                    if selectSceond {
-                                                        selectSceond.toggle()
+                                                    myData.selectFirst.toggle()
+                                                    if myData.selectSecond {
+                                                        myData.selectSecond.toggle()
                                                     }
                                                 }
-                                            if firstColor == "empty"{
-                                                Text("Choose")
+                                            if myData.firstColor == "empty"{
+                                                Text("select")
                                                     .font(.title)
                                                     .fontWeight(.bold)
                                                     .foregroundColor(.black)
                                                     .offset(x: -10, y: 40 )
-                                            } else if firstColor != "empty" && secondColor != "empty" {
-                                                Text("Choose")
+                                            } else if myData.firstColor != "empty" && myData.secondColor != "empty" {
+                                                Text("select")
                                                     .foregroundColor(.black)
                                                     .font(.title)
                                                     .fontWeight(.bold)
@@ -498,9 +502,9 @@ struct PaintView: View {
                                     }
                                     
                                     // second paint
-                                    if selectSceond {
+                                    if myData.selectSecond {
                                         
-                                        Image("right-paint-\(secondColor)")
+                                        Image("right-paint-\(myData.secondColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .trailing])
@@ -508,24 +512,24 @@ struct PaintView: View {
                                     } else {
                                         
                                         ZStack{
-                                            Image("right-paint-\(secondColor)")
+                                            Image("right-paint-\(myData.secondColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .padding([.top, .trailing])
                                                 .onTapGesture {
-                                                    selectSceond.toggle()
-                                                    if selectFirst {
-                                                        selectFirst.toggle()
+                                                    myData.selectSecond.toggle()
+                                                    if myData.selectFirst {
+                                                        myData.selectFirst.toggle()
                                                     }
                                                 }
-                                            if secondColor == "empty"{
-                                                Text("Choose")
+                                            if myData.secondColor == "empty"{
+                                                Text("select")
                                                     .font(.title)
                                                     .foregroundColor(.black)
                                                     .fontWeight(.bold)
                                                     .offset(x: 10, y: 40 )
-                                            } else if firstColor != "empty" && secondColor != "empty" {
-                                                Text("Choose")
+                                            } else if myData.firstColor != "empty" && myData.secondColor != "empty" {
+                                                Text("select")
                                                     .font(.title)
                                                     .foregroundColor(.black)
                                                     .fontWeight(.bold)
@@ -546,17 +550,17 @@ struct PaintView: View {
                                         print(myData.targetColor)
                                         if myData.resultColor == myData.targetColor {
                                             myData.right += 1
-                                            if myData.count < 10 {
+                                            if myData.count < 7 {
                                                 print("correct")
                                                 Sounds2.play(sound: "correct", type: "mp3")
                                                 
                                             } else {
                                                 // game over
-                                                print("10번째")
-                                                selectFirst = false
-                                                selectSceond = false
-                                                firstColor = "empty"
-                                                secondColor = "empty"
+                                                print("7번째")
+                                                myData.selectFirst = false
+                                                myData.selectSecond = false
+                                                myData.firstColor = "empty"
+                                                myData.secondColor = "empty"
                                                 myData.showModal.toggle()
                                                 Sounds2.play(sound: "clear", type: "mp3")
                                             }
@@ -592,18 +596,18 @@ struct PaintView: View {
                                             }
                                             
                                             // game over
-                                            if myData.count == 10 {
+                                            if myData.count == 7 {
                                                 Sounds2.play(sound: "clear", type: "mp3")
-                                                print("10번째")
-                                                selectFirst = false
-                                                selectSceond = false
-                                                firstColor = "empty"
-                                                secondColor = "empty"
+                                                print("7번째")
+                                                myData.selectFirst = false
+                                                myData.selectSecond = false
+                                                myData.firstColor = "empty"
+                                                myData.secondColor = "empty"
                                                 myData.showModal.toggle()
                                             }
                                         }
-                                        firstColor = "empty"
-                                        secondColor = "empty"
+                                        myData.firstColor = "empty"
+                                        myData.secondColor = "empty"
                                         myData.resultColor = "empty"
                                     }) {
                                         HStack {
@@ -614,7 +618,7 @@ struct PaintView: View {
                                         }
                                         .padding()
                                         .foregroundColor(.white)
-                                        .background(LinearGradient(gradient: Gradient(colors: [Color(firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(secondColor)]), startPoint: .leading, endPoint: .trailing))
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color(myData.firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(myData.secondColor)]), startPoint: .leading, endPoint: .trailing))
                                         .cornerRadius(40)
 
                                     }
@@ -649,8 +653,8 @@ struct PaintView: View {
                                 // paint
                                 HStack{
                                     // first paint
-                                    if selectFirst {
-                                        Image("left-paint-\(firstColor)")
+                                    if myData.selectFirst {
+                                        Image("left-paint-\(myData.firstColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .leading])
@@ -658,24 +662,24 @@ struct PaintView: View {
                                     } else {
                                        
                                         ZStack{
-                                            Image("left-paint-\(firstColor)")
+                                            Image("left-paint-\(myData.firstColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .padding([.top, .leading])
                                                 .onTapGesture {
-                                                    selectFirst.toggle()
-                                                    if selectSceond {
-                                                        selectSceond.toggle()
+                                                    myData.selectFirst.toggle()
+                                                    if myData.selectSecond {
+                                                        myData.selectSecond.toggle()
                                                     }
                                                 }
-                                            if firstColor == "empty"{
-                                                Text("Choose")
+                                            if myData.firstColor == "empty"{
+                                                Text("select")
                                                     .font(.title)
                                                     .fontWeight(.bold)
                                                     .foregroundColor(.black)
                                                     .offset(x: -10, y: 40 )
-                                            } else if firstColor != "empty" && secondColor != "empty" {
-                                                Text("Choose")
+                                            } else if myData.firstColor != "empty" && myData.secondColor != "empty" {
+                                                Text("select")
                                                     .foregroundColor(.black)
                                                     .font(.title)
                                                     .fontWeight(.bold)
@@ -687,9 +691,9 @@ struct PaintView: View {
                                     }
                                     
                                     // second paint
-                                    if selectSceond {
+                                    if myData.selectSecond {
                                         
-                                        Image("right-paint-\(secondColor)")
+                                        Image("right-paint-\(myData.secondColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .trailing])
@@ -697,24 +701,24 @@ struct PaintView: View {
                                     } else {
                                         
                                         ZStack{
-                                            Image("right-paint-\(secondColor)")
+                                            Image("right-paint-\(myData.secondColor)")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .padding([.top, .trailing])
                                                 .onTapGesture {
-                                                    selectSceond.toggle()
-                                                    if selectFirst {
-                                                        selectFirst.toggle()
+                                                    myData.selectSecond.toggle()
+                                                    if myData.selectFirst {
+                                                        myData.selectFirst.toggle()
                                                     }
                                                 }
-                                            if secondColor == "empty"{
-                                                Text("Choose")
+                                            if myData.secondColor == "empty"{
+                                                Text("select")
                                                     .font(.title)
                                                     .foregroundColor(.black)
                                                     .fontWeight(.bold)
                                                     .offset(x: 10, y: 40 )
-                                            } else if firstColor != "empty" && secondColor != "empty" {
-                                                Text("Choose")
+                                            } else if myData.firstColor != "empty" && myData.secondColor != "empty" {
+                                                Text("select")
                                                     .font(.title)
                                                     .foregroundColor(.black)
                                                     .fontWeight(.bold)
@@ -735,17 +739,17 @@ struct PaintView: View {
                                         print(myData.targetColor)
                                         if myData.resultColor == myData.targetColor {
                                             myData.right += 1
-                                            if myData.count < 10 {
+                                            if myData.count < 7 {
                                                 print("correct")
                                                 Sounds2.play(sound: "correct", type: "mp3")
                                                 
                                             } else {
                                                 // game over
-                                                print("10번째")
-                                                selectFirst = false
-                                                selectSceond = false
-                                                firstColor = "empty"
-                                                secondColor = "empty"
+                                                print("7번째")
+                                                myData.selectFirst = false
+                                                myData.selectSecond = false
+                                                myData.firstColor = "empty"
+                                                myData.secondColor = "empty"
                                                 myData.showModal.toggle()
                                                 Sounds2.play(sound: "clear", type: "mp3")
                                             }
@@ -781,18 +785,18 @@ struct PaintView: View {
                                             }
                                             
                                             // game over
-                                            if myData.count == 10 {
+                                            if myData.count == 7 {
                                                 Sounds2.play(sound: "clear", type: "mp3")
-                                                print("10번째")
-                                                selectFirst = false
-                                                selectSceond = false
-                                                firstColor = "empty"
-                                                secondColor = "empty"
+                                                print("7번째")
+                                                myData.selectFirst = false
+                                                myData.selectSecond = false
+                                                myData.firstColor = "empty"
+                                                myData.secondColor = "empty"
                                                 myData.showModal.toggle()
                                             }
                                         }
-                                        firstColor = "empty"
-                                        secondColor = "empty"
+                                        myData.firstColor = "empty"
+                                        myData.secondColor = "empty"
                                         myData.resultColor = "empty"
                                     }) {
                                         HStack {
@@ -803,7 +807,7 @@ struct PaintView: View {
                                         }
                                         .padding()
                                         .foregroundColor(.white)
-                                        .background(LinearGradient(gradient: Gradient(colors: [Color(firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(secondColor)]), startPoint: .leading, endPoint: .trailing))
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color(myData.firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(myData.secondColor)]), startPoint: .leading, endPoint: .trailing))
                                         .cornerRadius(40)
 
                                     }

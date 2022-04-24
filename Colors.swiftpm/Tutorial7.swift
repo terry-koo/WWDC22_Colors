@@ -27,7 +27,7 @@ struct Tutorial7: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"The circle behind the paint bin \n is the color of the paint that customer want\" ")
+                    Text(" \"The circle shows the color that the customer wants.\" \n \"She wants yellow-green paint!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -58,7 +58,7 @@ struct Tutorial7: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"The circle behind the paint bin \n is the color of the paint that customer want\" ")
+                    Text(" \"The circle shows the color that the customer wants.\" \n \"She wants yellow-green paint!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -89,7 +89,7 @@ struct Tutorial7: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"The circle behind the paint bin \n is the color of the paint that customer want\" ")
+                    Text(" \"The circle shows the color that the customer wants.\" \n \"She wants yellow-green paint!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

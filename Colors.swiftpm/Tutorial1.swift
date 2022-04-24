@@ -31,7 +31,7 @@ struct Tutorial1: View {
                         .font(.largeTitle)
                 }
                 VStack{
-                    Text(" \"Hello, I need paint to paint my house\" ")
+                    Text(" \"Hello, I need to buy paint for my house\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -41,7 +41,7 @@ struct Tutorial1: View {
                         .font(.largeTitle)
                         .padding()
                     
-                    Text(" \"Your shop is the most popular paint shop in my town!!\" ")
+                    Text(" \"I heard this is the most popular paint shop in the town\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -51,7 +51,7 @@ struct Tutorial1: View {
                         .font(.largeTitle)
                         .padding()
                     
-                    Text(" \"Please give me a beautiful color of paint\" ")
+                    Text(" \"Please make me a beautiful paint\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

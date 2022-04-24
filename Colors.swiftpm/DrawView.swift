@@ -53,9 +53,36 @@ struct DrawView: View {
                         }
                     }
                     HStack{
-                        Text("Left Customers : \(myData.count) / 10")
-                            .font(.title)
-                            .fontWeight(.bold)
+                        if myData.count == 0 {
+                            
+                            Text("Seven To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        } else if myData.count == 1 {
+                            Text("Six To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        } else if myData.count == 2 {
+                            Text("Five To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        } else if myData.count == 3 {
+                            Text("Four To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        } else if myData.count == 4 {
+                            Text("Three To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        } else if myData.count == 5 {
+                            Text("Two To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        } else if myData.count == 6 {
+                            Text("One To Go")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        }
                     }
                     
                     Spacer()
@@ -131,35 +158,7 @@ struct DrawView: View {
 
                     Spacer()
                     
-//                    // customer message
-//                    HStack{
-//                        Text(myData.randomMessage)
-//                            .font(.system(size: 25))
-//                            .foregroundColor(Color("message-font"))
-//                            .background(
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .fill(Color("message-box")
-//                                )
-//                            )
-//                            .multilineTextAlignment(.leading)
-//                            .padding(.leading)
-//                            .offset(y: 19)
-//                        Spacer()
-//                    }
-//                    HStack{
-//                        VStack{
-//                            Image(myData.randomCustomer)
-//                                .resizable()
-//                                .frame(height: geometry.size.height * 0.7)
-//                                .padding(.leading)
-//                        }
-//                        VStack{
-//                            Image("bucket")
-//                                .resizable()
-//                                .frame(height: geometry.size.height * 0.3)
-//                        }
-//                    }
-//                    Spacer()
+
                 }
             } // ZStack
             .padding([.top, .leading, .bottom])

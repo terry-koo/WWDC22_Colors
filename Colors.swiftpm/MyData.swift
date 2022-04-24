@@ -23,6 +23,10 @@ class MyData: ObservableObject {
     @Published var showInformation = false
     @Published var randomRich = Array(Set(["rich1","rich2","rich3","rich4"]))[0]
     @Published var showTips = false
+    @Published var firstColor = "empty"
+    @Published var secondColor = "empty"
+    @Published var selectFirst = false
+    @Published var selectSecond = false
     
     
     var message = [

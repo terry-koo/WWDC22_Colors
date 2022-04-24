@@ -17,6 +17,92 @@ struct Tutorial12: View {
                             .opacity(0.85)
                             .edgesIgnoringSafeArea(.all)
                         
+                        GeometryReader{ geometry in
+                            let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
+                            let weight: Double = geometry.size.width * 0.183
+                            
+                            // triangle yellow
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // triangle red
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 1  * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            //triangle blue
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 1  * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // secondary color orange
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.closeSubpath()
+                            }
+                            
+                            //.stroke()
+                            
+                            
+                            
+                            // secondary color green
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // secondary coloe violet
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.closeSubpath()
+                            }
+                            //.stroke()
+                            
+                            
+                            
+                            
+                        } // GeometryReader
+                        
+                        .blendMode(.destinationOut)
+                        .frame(width: 400, height: 400)
+                        .offset(x: 248, y: -99)
+                        
                         
                         
                         RoundedRectangle(cornerRadius: 10)
@@ -27,7 +113,7 @@ struct Tutorial12: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"Third, tap on the remaining empty bucket. \n And choose the color in the hexagon like what you just did.\" ")
+                    Text(" \"Third, tap on the remaining bucket and select the green from the hexagon\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -35,7 +121,7 @@ struct Tutorial12: View {
                                      )
                         )
                         .font(.largeTitle)
-                        .offset(x: 100, y: 450)
+                        .offset(x: 50, y: 450)
                     
                 // 11inch
                 } else if geometry.size.height < 835 {
@@ -50,11 +136,97 @@ struct Tutorial12: View {
                             .blendMode(.destinationOut)
                             .frame(width: 170, height: 160)
                             .offset(x: 380, y: 200)
+                        
+                        GeometryReader{ geometry in
+                            let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
+                            let weight: Double = geometry.size.width * 0.215
+                            
+                            // triangle yellow
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // triangle red
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 1  * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            //triangle blue
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 1  * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // secondary color orange
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.closeSubpath()
+                            }
+                            
+                            //.stroke()
+                            
+                            
+                            
+                            // secondary color green
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // secondary coloe violet
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.closeSubpath()
+                            }
+                            //.stroke()
+                            
+                            
+                            
+                            
+                        } // GeometryReader
+                        
+                        .blendMode(.destinationOut)
+                        .frame(width: 400, height: 400)
+                        .offset(x: 290, y: -137)
                     }
                     .compositingGroup()
                     
                     
-                    Text(" \"Third, tap on the remaining empty bucket. \n And choose the color in the hexagon like what you just did.\" ")
+                    Text(" \"Third, tap on the remaining bucket and select the green from the hexagon\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -62,7 +234,7 @@ struct Tutorial12: View {
                                      )
                         )
                         .font(.largeTitle)
-                        .offset(x: 210, y: 450)
+                        .offset(x: 50, y: 450)
             
                 
                 // 12.9inch
@@ -74,6 +246,91 @@ struct Tutorial12: View {
                             .opacity(0.85)
                             .edgesIgnoringSafeArea(.all)
                         
+                        GeometryReader{ geometry in
+                            let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
+                            let weight: Double = geometry.size.width * 0.255
+                            
+                            // triangle yellow
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // triangle red
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 1  * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            //triangle blue
+                            Path { path in
+                                path.move(to: centerPoint)
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() / 2 * weight, y: centerPoint.y - 1 / 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 1  * weight))
+                                path.addLine(to: centerPoint)
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // secondary color orange
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.closeSubpath()
+                            }
+                            
+                            //.stroke()
+                            
+                            
+                            
+                            // secondary color green
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
+                                
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
+                                path.closeSubpath()
+                            }
+                            
+                            
+                            
+                            
+                            // secondary coloe violet
+                            Path { path in
+                                path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x + (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y + 2 * weight))
+                                path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
+                                path.closeSubpath()
+                            }
+                            //.stroke()
+                            
+                            
+                            
+                            
+                        } // GeometryReader
+                        
+                        .blendMode(.destinationOut)
+                        .frame(width: 400, height: 400)
+                        .offset(x: 333, y: -157)
                         
                         RoundedRectangle(cornerRadius: 10)
                             .blendMode(.destinationOut)
@@ -83,7 +340,7 @@ struct Tutorial12: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"Third, tap on the remaining empty bucket. \n And choose the color in the hexagon like what you just did.\" ")
+                    Text(" \"Third, tap on the remaining bucket and select the green from the hexagon\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

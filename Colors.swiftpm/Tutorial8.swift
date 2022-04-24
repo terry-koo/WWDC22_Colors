@@ -25,7 +25,7 @@ struct Tutorial8: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"You can make paint on the right\" ")
+                    Text(" \"You can make paint on the right\" \n \"Let's make yellow-green paint for her\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -57,7 +57,7 @@ struct Tutorial8: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"You can make paint on the right\" ")
+                    Text(" \"You can make paint on the right\" \n \"Let's make yellow-green paint for her\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -90,7 +90,7 @@ struct Tutorial8: View {
                     .compositingGroup()
                     
                     
-                    Text(" \"You can make paint on the right\" ")
+                    Text(" \"You can make paint on the right\" \n \"Let's make yellow-green paint for her\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

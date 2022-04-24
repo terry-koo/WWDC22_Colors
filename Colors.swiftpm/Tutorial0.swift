@@ -32,7 +32,7 @@ struct Tutorial0: View {
                         .offset( y: -10)
                 }
                 VStack{
-                    Text(" \"Today's my first day at the paint shop as a part-timer\" ")
+                    Text(" \"Today’s my first day working at the paint shop!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -42,7 +42,7 @@ struct Tutorial0: View {
                         .font(.largeTitle)
                         .padding()
                     
-                    Text(" \"Here I go! \" ")
+                    Text(" \"Here I go!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

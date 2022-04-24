@@ -17,13 +17,13 @@ struct Tutorial14: View {
                                 .edgesIgnoringSafeArea(.all)
 
 
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 50)
                                 .blendMode(.destinationOut)
-                                .frame(width: 280 , height: 60)
+                                .frame(width: 250 , height: 60)
                                 .offset(x: 250, y: 325)
                         }
                         .compositingGroup()
-                        Text(" \"Finally, if you press the SELL button, ")
+                        Text(" \"Finally, if you tap the SELL button, ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -33,7 +33,7 @@ struct Tutorial14: View {
                             .font(.largeTitle)
                             .offset(x: 0, y: 130)
                    
-                        Text(" the two colors you choose will be combined into one paint and sold to customers\" ")
+                        Text(" the paint will be delivered to the customer\" ")
                             .foregroundColor(Color("message-font"))
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
@@ -54,9 +54,9 @@ struct Tutorial14: View {
                                 .edgesIgnoringSafeArea(.all)
 
 
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 50)
                                 .blendMode(.destinationOut)
-                                .frame(width: 320 , height: 100)
+                                .frame(width: 320 , height: 85)
                                 .offset(x: 290, y: 330)
                         }
                         .compositingGroup()
@@ -91,9 +91,9 @@ struct Tutorial14: View {
                                 .edgesIgnoringSafeArea(.all)
 
 
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 50)
                                 .blendMode(.destinationOut)
-                                .frame(width: 360, height: 90)
+                                .frame(width: 350, height: 90)
                                 .offset(x: 330, y: 427)
                         }
                         .compositingGroup()

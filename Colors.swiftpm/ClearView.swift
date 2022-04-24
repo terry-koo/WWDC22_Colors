@@ -22,9 +22,16 @@ struct ClearView: View {
                            .fontWeight(.heavy)
                            .padding()
                        
-                       if myData.right > 8 {
-                           Image(myData.randomRich)
-                               .padding()
+                       if myData.right > 5 {
+                           if geometry.size.height < 800 {
+                               Image(myData.randomRich)
+                                   .resizable()
+                                   .frame(width: 360, height: 310, alignment: .center)
+
+                           } else {
+                               Image(myData.randomRich)
+                                   .padding()
+                           }
                        } else {
                            if geometry.size.height < 800 {
                            Image("closed")
@@ -36,19 +43,19 @@ struct ClearView: View {
                                    .frame(width: 600, height: 550, alignment: .center)
                            }
                        }
-                       HStack{
+                      HStack{
                            Image(systemName: "timer")
                                .font(.title)
                            Text(time)
                                .font(.title)
-                       }
+                      }
                       
-                       Text("score : \(myData.right) / 10")
+                       Text("score : \(myData.right) / 7")
                            .font(.title)
                            .fontWeight(.bold)
                            .padding()
                        
-                       if myData.right > 7 {
+                       if myData.right > 5 {
                            Text("You're the best salesman")
                                .font(.title)
                                .padding()
@@ -99,10 +106,3 @@ func rePlay(myData: MyData){
     
 }
 
-
-//struct ClearView_Preview: PreviewProvider {
-//    static var previews: some View {
-//        ClearView()
-//         
-//    }
-//}

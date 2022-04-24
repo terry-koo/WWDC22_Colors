@@ -103,7 +103,7 @@ struct Tutorial10: View {
                         .offset(x: 248, y: -99)
                         
                     } // ZStack
-                    Text(" \"Second, choose the color that's in the hexagon\" ")
+                    Text(" \"Second, select the yellow from the hexagon \n Because yellow-green is made by mixing yellow and green\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -214,7 +214,7 @@ struct Tutorial10: View {
                         .offset(x: 290, y: -137)
                         
                     } // ZStack
-                    Text(" \"Second, choose the color that's in the hexagon\" ")
+                    Text(" \"Second, select the yellow from the hexagon \n Because yellow-green is made by mixing yellow and green\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -325,7 +325,7 @@ struct Tutorial10: View {
                         .offset(x: 333, y: -157)
                         
                     } // ZStack
-                    Text(" \"Second, choose the color that's in the hexagon\" ")
+                    Text(" \"Second, select the yellow from the hexagon \n Because yellow-green is made by mixing yellow and green\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)

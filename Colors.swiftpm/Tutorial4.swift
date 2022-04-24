@@ -14,7 +14,7 @@ struct Tutorial4: View {
                 
                 VStack{
                     
-                    Text(" \"Yes, you!\" \n \"The part-timer who came today\" ")
+                    Text(" \"Yes, you!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
