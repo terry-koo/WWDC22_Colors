@@ -13,12 +13,26 @@ struct Tutorial0: View {
     var body: some View {
         ZStack{
             Rectangle()
+                .fill(.black)
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
-                Image("customer9")
                 VStack{
-                    Text(" \"I need paint to paint my house. ")
+                    Image("customer7")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Text(" YOU ")
+                        .foregroundColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(.white)
+                            )
+                        )
+                        .font(.largeTitle)
+                        .offset( y: -10)
+                }
+                VStack{
+                    Text(" \"Today's my first day at the paint shop as a part-timer\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -26,8 +40,9 @@ struct Tutorial0: View {
                             )
                         )
                         .font(.largeTitle)
+                        .padding()
                     
-                    Text(" Your shop is the most popular paint shop in my town!! ")
+                    Text(" \"Here I go! \" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -35,19 +50,20 @@ struct Tutorial0: View {
                             )
                         )
                         .font(.largeTitle)
-                    
-                    Text(" Please give me a beautiful color of paint.\" ")
-                        .foregroundColor(Color("message-font"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("message-box")
-                            )
-                        )
-                        .font(.largeTitle)
+
                     
                 }
             }
         }
     }
     
+}
+
+
+struct Tutorial0_Preview: PreviewProvider {
+    static var previews: some View {
+        Tutorial14()
+            .previewInterfaceOrientation(.landscapeRight)
+         
+    }
 }

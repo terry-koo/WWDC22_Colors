@@ -1,3 +1,11 @@
+//
+//  File.swift
+//  Colors
+//
+//  Created by Terry Koo on 2022/04/23.
+//
+
+
 import SwiftUI
 
 
@@ -7,13 +15,13 @@ struct Tutorial3: View {
     var body: some View {
         ZStack{
             Rectangle()
+                .fill(.black)
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
                 
                 VStack{
-                    
-                    Text(" \"Yes, you who are playing this game!\" ")
+                    Text(" \"Hey, there!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -23,11 +31,31 @@ struct Tutorial3: View {
                         .font(.largeTitle)
                     
                 }
-                Image("staff1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                VStack{
+                    Image("staff2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    
+                    Text(" manager ")
+                        .foregroundColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(.white)
+                            )
+                        )
+                        .font(.largeTitle)
+                        .offset(y: -70)
+                }
             }
         }
     }
     
+}
+
+struct Tutorial3_Preview: PreviewProvider {
+    static var previews: some View {
+        Tutorial3()
+            .previewInterfaceOrientation(.landscapeRight)
+         
+    }
 }

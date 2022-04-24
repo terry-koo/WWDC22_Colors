@@ -5,38 +5,49 @@ struct Tutorial5: View {
 
     
     var body: some View {
-        
-
         ZStack{
-                ZStack{
-                    Rectangle()
-                        .opacity(0.85)
-                        .edgesIgnoringSafeArea(.all)
-
-
-                    RoundedRectangle(cornerRadius: 10)
-                        .blendMode(.destinationOut)
-                        .frame(width: 600, height: 600)
-                        .offset(x: -350, y: -20)
-                }
-                .compositingGroup()
-            
-           
-                Text(" \"First, if you look to the left, can you see the empty paint bin and the circle behind it?\" ")
-                    .foregroundColor(Color("message-font"))
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("message-box")
-                        )
-                    )
-                    .font(.largeTitle)
-                    .offset(x: 0, y: -350)
-       
-            
-        }
+            Rectangle()
+                .fill(.black)
+                .opacity(0.85)
+                .edgesIgnoringSafeArea(.all)
+            HStack{
                 
-        
-        
+                VStack{
+                    
+                    Text(" \"We have a customer, \n so let's get to work right away\" ")
+                        .foregroundColor(Color("message-font"))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("message-box")
+                            )
+                        )
+                        .font(.largeTitle)
+                        .padding()
+                    
+                    Text(" \"It's not hard. I'll explain everything for you\" ")
+                        .foregroundColor(Color("message-font"))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("message-box")
+                            )
+                        )
+                        .font(.largeTitle)
+                    
+                }
+                Image("staff1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
     
+}
+
+
+struct Tutorial5_Preview: PreviewProvider {
+    static var previews: some View {
+        Tutorial5()
+            .previewInterfaceOrientation(.landscapeRight)
+         
+    }
 }

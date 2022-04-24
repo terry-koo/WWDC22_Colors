@@ -5,7 +5,6 @@ struct PaintView: View {
     @State private var canTouchDown = true
     @State private var firstColor = "empty"
     @State private var secondColor = "empty"
-   //@State private var resultColor = "empty"
     @State private var selectFirst = false
     @State private var selectSceond = false
     @EnvironmentObject var myData: MyData
@@ -236,9 +235,9 @@ struct PaintView: View {
                     } // ZStack
 
                 
-                // ipad pro 9.7inch and 11inch
+                // ipad pro 9.7inch
                 //############################################################################################################################################
-                if paintGeometry.size.height < 800.0 {
+                if paintGeometry.size.height < 749.0 {
                     // color combiner
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
@@ -273,6 +272,7 @@ struct PaintView: View {
                                                     }
                                                 }
                                             Text("Choose")
+                                                .offset(y: 20)
                                         }
                                             
                                     }
@@ -298,6 +298,7 @@ struct PaintView: View {
                                                     }
                                                 }
                                             Text("Choose")
+                                                .offset(y: 20)
                                         }
                                     }
                                 }
@@ -305,12 +306,8 @@ struct PaintView: View {
                                 
                                 HStack{
                                     Button(action: {
-                                       
                                         myData.count += 1
                                         
-                                        print("MIX button click")
-                                        print(myData.resultColor)
-                                        print(myData.targetColor)
                                         if myData.resultColor == myData.targetColor {
                                             myData.right += 1
                                             if myData.count < 10 {
@@ -374,10 +371,10 @@ struct PaintView: View {
                                         myData.resultColor = "empty"
                                     }) {
                                         HStack {
-                                            Text("MIX")
+                                            Text("SELL")
                                                 .fontWeight(.semibold)
                                                 .font(.title)
-                                                .frame(minWidth: 270)
+                                                .frame(width: 200, height: 20)
                                         }
                                         .padding()
                                         .foregroundColor(.white)
@@ -398,8 +395,9 @@ struct PaintView: View {
                         //##############################################################################################################
                     } // ZStack
                     .frame(minHeight: 200,  maxHeight: 210)
-                } else {
-                    // ipad pro 12.9inch
+                    
+                // ipad pro 11inch
+                } else if paintGeometry.size.height < 800.0 {
                     // color combiner
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
@@ -436,7 +434,17 @@ struct PaintView: View {
                                                 }
                                             if firstColor == "empty"{
                                                 Text("Choose")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.black)
                                                     .offset(x: -10, y: 40 )
+                                            } else if firstColor != "empty" && secondColor != "empty" {
+                                                Text("Choose")
+                                                    .foregroundColor(.black)
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .offset(x: -10, y: 40 )
+                                                    
                                             }
                                         }
     
@@ -465,6 +473,15 @@ struct PaintView: View {
                                                 }
                                             if secondColor == "empty"{
                                                 Text("Choose")
+                                                    .font(.title)
+                                                    .foregroundColor(.black)
+                                                    .fontWeight(.bold)
+                                                    .offset(x: 10, y: 40 )
+                                            } else if firstColor != "empty" && secondColor != "empty" {
+                                                Text("Choose")
+                                                    .font(.title)
+                                                    .foregroundColor(.black)
+                                                    .fontWeight(.bold)
                                                     .offset(x: 10, y: 40 )
                                             }
                                         }
@@ -543,7 +560,196 @@ struct PaintView: View {
                                         myData.resultColor = "empty"
                                     }) {
                                         HStack {
-                                            Text("MIX")
+                                            Text("SELL")
+                                                .fontWeight(.semibold)
+                                                .font(.title)
+                                                .frame(minWidth: 270)
+                                        }
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color(firstColor), Color(myData.resultColor), Color(myData.resultColor),  Color(secondColor)]), startPoint: .leading, endPoint: .trailing))
+                                        .cornerRadius(40)
+
+                                    }
+                                    .padding()
+                                    .sheet(isPresented: $myData.showModal) {
+                                        ClearView(time: myData.getTime())
+                                    }
+                                }
+                                
+                                
+                            }
+                            
+                        }
+                        
+                    
+                    } // ZStack
+                    .frame(minHeight: 260,  maxHeight: 270)
+                } else {
+                    // ipad pro 12.9inch
+                    // color combiner
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color("card-foreground"), lineWidth: 4)
+                            .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                        
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color("card"))
+                        
+                        // new version
+                        HStack{
+                            VStack{
+                                // paint
+                                HStack{
+                                    // first paint
+                                    if selectFirst {
+                                        Image("left-paint-\(firstColor)")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .padding([.top, .leading])
+                                            
+                                    } else {
+                                       
+                                        ZStack{
+                                            Image("left-paint-\(firstColor)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .padding([.top, .leading])
+                                                .onTapGesture {
+                                                    selectFirst.toggle()
+                                                    if selectSceond {
+                                                        selectSceond.toggle()
+                                                    }
+                                                }
+                                            if firstColor == "empty"{
+                                                Text("Choose")
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .foregroundColor(.black)
+                                                    .offset(x: -10, y: 40 )
+                                            } else if firstColor != "empty" && secondColor != "empty" {
+                                                Text("Choose")
+                                                    .foregroundColor(.black)
+                                                    .font(.title)
+                                                    .fontWeight(.bold)
+                                                    .offset(x: -10, y: 40 )
+                                                    
+                                            }
+                                        }
+    
+                                    }
+                                    
+                                    // second paint
+                                    if selectSceond {
+                                        
+                                        Image("right-paint-\(secondColor)")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .padding([.top, .trailing])
+             
+                                    } else {
+                                        
+                                        ZStack{
+                                            Image("right-paint-\(secondColor)")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .padding([.top, .trailing])
+                                                .onTapGesture {
+                                                    selectSceond.toggle()
+                                                    if selectFirst {
+                                                        selectFirst.toggle()
+                                                    }
+                                                }
+                                            if secondColor == "empty"{
+                                                Text("Choose")
+                                                    .font(.title)
+                                                    .foregroundColor(.black)
+                                                    .fontWeight(.bold)
+                                                    .offset(x: 10, y: 40 )
+                                            } else if firstColor != "empty" && secondColor != "empty" {
+                                                Text("Choose")
+                                                    .font(.title)
+                                                    .foregroundColor(.black)
+                                                    .fontWeight(.bold)
+                                                    .offset(x: 10, y: 40 )
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                
+                                HStack{
+                                    Button(action: {
+                                       
+                                        myData.count += 1
+                                        
+                                        print("MIX button click")
+                                        print(myData.resultColor)
+                                        print(myData.targetColor)
+                                        if myData.resultColor == myData.targetColor {
+                                            myData.right += 1
+                                            if myData.count < 10 {
+                                                print("correct")
+                                                Sounds2.play(sound: "correct", type: "mp3")
+                                                
+                                            } else {
+                                                // game over
+                                                print("10번째")
+                                                selectFirst = false
+                                                selectSceond = false
+                                                firstColor = "empty"
+                                                secondColor = "empty"
+                                                myData.showModal.toggle()
+                                                Sounds2.play(sound: "clear", type: "mp3")
+                                            }
+                                            // set random target color
+                                            var randomColor = getRandomColor()
+                                            if myData.targetColor != randomColor{
+                                                myData.targetColor = randomColor
+                                            } else {
+                                                randomColor = getRandomColor()
+                                                if randomColor == myData.targetColor {
+                                                    myData.targetColor = getRandomColor()
+                                                } else {
+                                                    myData.targetColor = randomColor
+                                                }
+        
+                                            }
+                                        } else {
+                                            myData.wrong += 1
+                                            Sounds2.play(sound: "incorrect", type: "mp3")
+                                            
+                                            // set random target color
+                                            var randomColor = getRandomColor()
+                                            if myData.targetColor != randomColor{
+                                                myData.targetColor = randomColor
+                                            } else {
+                                                randomColor = getRandomColor()
+                                                if randomColor == myData.targetColor {
+                                                    myData.targetColor = getRandomColor()
+                                                } else {
+                                                    myData.targetColor = randomColor
+                                                }
+        
+                                            }
+                                            
+                                            // game over
+                                            if myData.count == 10 {
+                                                Sounds2.play(sound: "clear", type: "mp3")
+                                                print("10번째")
+                                                selectFirst = false
+                                                selectSceond = false
+                                                firstColor = "empty"
+                                                secondColor = "empty"
+                                                myData.showModal.toggle()
+                                            }
+                                        }
+                                        firstColor = "empty"
+                                        secondColor = "empty"
+                                        myData.resultColor = "empty"
+                                    }) {
+                                        HStack {
+                                            Text("SELL")
                                                 .fontWeight(.semibold)
                                                 .font(.title)
                                                 .frame(minWidth: 270)

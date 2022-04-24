@@ -4,11 +4,10 @@
 //
 //  Created by Terry Koo on 2022/04/23.
 //
-
 import SwiftUI
 
 
-struct Tutorial2: View {
+struct Tutorial16: View {
 
     
     var body: some View {
@@ -18,9 +17,22 @@ struct Tutorial2: View {
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
-                
                 VStack{
-                    Text(" \"Sure!\" ")
+                    Image("customer7")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Text(" YOU ")
+                        .foregroundColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color(.white)
+                            )
+                        )
+                        .font(.largeTitle)
+                        .offset( y: -10)
+                }
+                VStack{
+                    Text(" \"Let's do this!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -29,33 +41,9 @@ struct Tutorial2: View {
                         )
                         .font(.largeTitle)
                         .padding()
+                
+
                     
-                    Text(" \"Please wait a moment\" ")
-                        .foregroundColor(Color("message-font"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("message-box")
-                            )
-                        )
-                        .font(.largeTitle)
-                    
-                    
-                    
-                }
-                VStack{
-                    Image("staff2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    
-                    Text(" manager ")
-                        .foregroundColor(.black)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color(.white)
-                            )
-                        )
-                        .font(.largeTitle)
-                        .offset(y: -70)
                 }
             }
         }
@@ -64,9 +52,9 @@ struct Tutorial2: View {
 }
 
 
-struct Tutorial2_Preview: PreviewProvider {
+struct Tutorial16_Preview: PreviewProvider {
     static var previews: some View {
-        Tutorial2()
+        Tutorial16()
             .previewInterfaceOrientation(.landscapeRight)
          
     }

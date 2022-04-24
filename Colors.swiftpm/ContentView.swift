@@ -114,6 +114,34 @@ struct ContentView: View {
                         tutorial += 1
                         myData.value = 0
                     }
+            } else if tutorial == 13{
+                Tutorial13()
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        tutorial += 1
+                        myData.value = 0
+                    }
+            } else if tutorial == 14{
+                Tutorial14()
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        tutorial += 1
+                        myData.value = 0
+                    }
+            } else if tutorial == 15{
+                Tutorial15()
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        tutorial += 1
+                        myData.value = 0
+                    }
+            } else if tutorial == 16{
+                Tutorial16()
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        tutorial += 1
+                        myData.value = 0
+                    }
             }
             
         }

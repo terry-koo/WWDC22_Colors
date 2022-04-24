@@ -1,16 +1,7 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/23.
-//
-
 import SwiftUI
 
+struct Tutorial15: View {
 
-struct Tutorial2: View {
-
-    
     var body: some View {
         ZStack{
             Rectangle()
@@ -20,7 +11,17 @@ struct Tutorial2: View {
             HStack{
                 
                 VStack{
-                    Text(" \"Sure!\" ")
+                    Text(" \"Don't forget that you have to make the paint \n  the customer wants\" ")
+                        .foregroundColor(Color("message-font"))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("message-box")
+                            )
+                        )
+                        .font(.largeTitle)
+                    
+                    
+                    Text(" \"Good Luck!!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -30,17 +31,8 @@ struct Tutorial2: View {
                         .font(.largeTitle)
                         .padding()
                     
-                    Text(" \"Please wait a moment\" ")
-                        .foregroundColor(Color("message-font"))
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color("message-box")
-                            )
-                        )
-                        .font(.largeTitle)
                     
-                    
-                    
+        
                 }
                 VStack{
                     Image("staff2")
@@ -61,13 +53,4 @@ struct Tutorial2: View {
         }
     }
     
-}
-
-
-struct Tutorial2_Preview: PreviewProvider {
-    static var previews: some View {
-        Tutorial2()
-            .previewInterfaceOrientation(.landscapeRight)
-         
-    }
 }

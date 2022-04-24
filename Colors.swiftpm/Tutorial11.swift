@@ -5,35 +5,128 @@ struct Tutorial11: View {
 
     var body: some View {
         
-
-        ZStack{
+        GeometryReader { geometry in
+            
+            // 9.7inch
+            if geometry.size.height < 769 {
                 ZStack{
-                    Rectangle()
-                        .opacity(0.85)
-                        .edgesIgnoringSafeArea(.all)
+                        ZStack{
+                            Rectangle()
+                                .fill(.black)
+                                .opacity(0.85)
+                                .edgesIgnoringSafeArea(.all)
 
 
-                    RoundedRectangle(cornerRadius: 10)
-                        .blendMode(.destinationOut)
-                        .frame(width: 360, height: 90)
-                        .offset(x: 330, y: 427)
+                            Circle()
+                                .blendMode(.destinationOut)
+                                .frame(width: 400, height: 400)
+                                .offset(x: 247, y: -99)
+                            
+                            Circle()
+                                .fill(.black)
+                                .frame(width: 282, height: 282)
+                                .offset(x: 247, y: -99)
+                                .opacity(0.85)
+                           
+                        } // ZStack
+                        Text(" \"Remember, the color in the doughnut-shaped circle is the color you can make, not the color you can choose\" ")
+                            .foregroundColor(Color("message-font"))
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("message-box")
+                                )
+                            )
+                            .font(.largeTitle)
+                            .offset(x: 0, y: 165)
+                               
+                }
+                .compositingGroup()
+                
+            // 11inch
+            } else if geometry.size.height < 835 {
+                ZStack{
+                        ZStack{
+                            Rectangle()
+                                .fill(.black)
+                                .opacity(0.85)
+                                .edgesIgnoringSafeArea(.all)
+
+
+                            Circle()
+                                .blendMode(.destinationOut)
+                                .frame(width: 465, height: 465)
+                                .offset(x: 290, y: -136)
+                            
+                            Circle()
+                                .fill(.black)
+                                .frame(width: 335, height: 335)
+                                .offset(x: 290, y: -136)
+                                .opacity(0.85)
+                           
+                        } // ZStack
+                        Text(" \"Remember, the color in the doughnut-shaped circle is the color you can make, not the color you can choose\" ")
+                            .foregroundColor(Color("message-font"))
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("message-box")
+                                )
+                            )
+                            .font(.largeTitle)
+                            .offset(x: 0, y: 145)
+                               
                 }
                 .compositingGroup()
             
-           
-                Text(" \"Finally, press the mix button and the two colors you choose combine to make paint.\" ")
-                    .foregroundColor(Color("message-font"))
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("message-box")
-                        )
-                    )
-                    
-                    .font(.largeTitle)
-                    .offset(x: 0, y: 340)
+            // 12.9inch
+            } else {
+                ZStack{
+                        ZStack{
+                            Rectangle()
+                                .fill(.black)
+                                .opacity(0.85)
+                                .edgesIgnoringSafeArea(.all)
+
+
+                            Circle()
+                                .blendMode(.destinationOut)
+                                .frame(width: 510, height: 510)
+                                .offset(x: 333, y: -157)
+                            
+                            Circle()
+                                .fill(.black)
+                                .frame(width: 400, height: 400)
+                                .offset(x: 333, y: -157)
+                                .opacity(0.85)
+                           
+                        } // ZStack
+                        Text(" \"Remember, the color in the doughnut-shaped circle is the color you can make, not the color you can choose\" ")
+                            .foregroundColor(Color("message-font"))
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("message-box")
+                                )
+                            )
+                            .font(.largeTitle)
+                            .offset(x: 0, y: 145)
+                               
+                }
+                .compositingGroup()
+            }
+        }
        
             
-        }
+           
+               
+    
+    
     }
     
+}
+
+struct Tutorial11_Preview: PreviewProvider {
+    static var previews: some View {
+        Tutorial11()
+            .previewInterfaceOrientation(.landscapeRight)
+         
+    }
 }
