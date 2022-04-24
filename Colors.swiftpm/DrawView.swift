@@ -45,12 +45,12 @@ struct DrawView: View {
                             }
                             Spacer()
                         }
-//                        HStack{
-//                            Image(systemName: "timer")
-//                                .font(.title)
-//                            Text(timeString(time: myData.value))
-//                                .font(.title)
-//                        }
+                        HStack{
+                            Image(systemName: "timer")
+                                .font(.title)
+                            Text(timeString(time: myData.value))
+                                .font(.title)
+                        }
                     }
                     HStack{
                         Text("Left Customers : \(myData.count) / 10")
