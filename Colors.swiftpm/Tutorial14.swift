@@ -2,11 +2,10 @@ import SwiftUI
 
 
 struct Tutorial14: View {
-
+    
+    
     var body: some View {
-        
         GeometryReader { geometry in
-            
             // 9.7inch
             if geometry.size.height < 769 {
                 ZStack{
@@ -15,8 +14,6 @@ struct Tutorial14: View {
                                 .fill(.black)
                                 .opacity(0.85)
                                 .edgesIgnoringSafeArea(.all)
-
-
                             RoundedRectangle(cornerRadius: 50)
                                 .blendMode(.destinationOut)
                                 .frame(width: 250 , height: 60)
@@ -52,8 +49,6 @@ struct Tutorial14: View {
                                 .fill(.black)
                                 .opacity(0.85)
                                 .edgesIgnoringSafeArea(.all)
-
-
                             RoundedRectangle(cornerRadius: 50)
                                 .blendMode(.destinationOut)
                                 .frame(width: 320 , height: 85)
@@ -80,7 +75,6 @@ struct Tutorial14: View {
                             .font(.largeTitle)
                             .offset(x: 0, y: 250)
                     }
-            
             // 12.9inch
             } else {
                 ZStack{
@@ -89,8 +83,6 @@ struct Tutorial14: View {
                                 .fill(.black)
                                 .opacity(0.85)
                                 .edgesIgnoringSafeArea(.all)
-
-
                             RoundedRectangle(cornerRadius: 50)
                                 .blendMode(.destinationOut)
                                 .frame(width: 350, height: 90)
@@ -116,14 +108,8 @@ struct Tutorial14: View {
                             )
                             .font(.largeTitle)
                             .offset(x: 0, y: 340)
-               
-                    
                 }
             }
         }
-        
-
-        
     }
-    
 }

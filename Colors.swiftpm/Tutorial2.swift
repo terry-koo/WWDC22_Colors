@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/23.
-//
-
 import SwiftUI
 
 
@@ -18,7 +11,6 @@ struct Tutorial2: View {
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
-                
                 VStack{
                     Text(" \"Sure, please wait a moment\" ")
                         .foregroundColor(Color("message-font"))
@@ -29,8 +21,6 @@ struct Tutorial2: View {
                         )
                         .font(.largeTitle)
 
-                    
-                    
                 }
                 VStack{
                     Image("staff2")
@@ -50,7 +40,6 @@ struct Tutorial2: View {
             }
         }
     }
-    
 }
 
 
@@ -58,6 +47,5 @@ struct Tutorial2_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial2()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }

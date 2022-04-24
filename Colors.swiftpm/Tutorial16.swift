@@ -1,14 +1,8 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/23.
-//
 import SwiftUI
 
 
 struct Tutorial16: View {
-
+    
     
     var body: some View {
         ZStack{
@@ -41,14 +35,10 @@ struct Tutorial16: View {
                         )
                         .font(.largeTitle)
                         .padding()
-                
-
-                    
                 }
             }
         }
     }
-    
 }
 
 
@@ -56,6 +46,5 @@ struct Tutorial16_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial16()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }

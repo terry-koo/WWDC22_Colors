@@ -1,11 +1,3 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/23.
-//
-
-
 import SwiftUI
 
 
@@ -19,7 +11,6 @@ struct Tutorial3: View {
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
-                
                 VStack{
                     Text(" \"Hey, there!\" ")
                         .foregroundColor(Color("message-font"))
@@ -29,7 +20,6 @@ struct Tutorial3: View {
                             )
                         )
                         .font(.largeTitle)
-                    
                 }
                 VStack{
                     Image("staff2")
@@ -49,13 +39,11 @@ struct Tutorial3: View {
             }
         }
     }
-    
 }
 
 struct Tutorial3_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial3()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }

@@ -3,19 +3,11 @@ import SwiftUI
 
 struct PaintView: View {
     @State private var canTouchDown = true
-//    @State private var firstColor = "empty"
-//    @State private var secondColor = "empty"
-//    @State private var myData.selectFirst = false
-//    @State private var myData.selectSecond = false
     @EnvironmentObject var myData: MyData
 
-
     
-
-
     var body: some View {
         GeometryReader{ paintGeometry in
-    
             VStack{
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
@@ -283,7 +275,6 @@ struct PaintView: View {
 
                 
                 // ipad pro 9.7inch
-                //############################################################################################################################################
                 if paintGeometry.size.height < 749.0 {
                     // color combiner
                     ZStack{
@@ -294,7 +285,6 @@ struct PaintView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("card"))
 
-                        // new version
                         HStack{
                             VStack{
                                 // paint
@@ -353,21 +343,14 @@ struct PaintView: View {
                                 
                                 HStack{
                                     Button(action: {
-                                        
                                          myData.count += 1
-                                         
-                                         print("MIX button click")
-                                         print(myData.resultColor)
-                                         print(myData.targetColor)
                                          if myData.resultColor == myData.targetColor {
                                              myData.right += 1
                                              if myData.count < 7 {
-                                                 print("correct")
                                                  Sounds2.play(sound: "correct", type: "mp3")
                                                  
                                              } else {
                                                  // game over
-                                                 print("7번째")
                                                  myData.selectFirst = false
                                                  myData.selectSecond = false
                                                  myData.firstColor = "empty"
@@ -409,7 +392,6 @@ struct PaintView: View {
                                              // game over
                                              if myData.count == 7 {
                                                  Sounds2.play(sound: "clear", type: "mp3")
-                                                 print("7번째")
                                                  myData.selectFirst = false
                                                  myData.selectSecond = false
                                                  myData.firstColor = "empty"
@@ -438,12 +420,8 @@ struct PaintView: View {
                                         ClearView(time: myData.getTime())
                                     }
                                 }
-                                
-                                
                             }
-                            
                         }
-                        //##############################################################################################################
                     } // ZStack
                     .frame(minHeight: 200,  maxHeight: 210)
                     
@@ -458,7 +436,6 @@ struct PaintView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("card"))
                         
-                        // new version
                         HStack{
                             VStack{
                                 // paint
@@ -469,9 +446,7 @@ struct PaintView: View {
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .leading])
-                                            
                                     } else {
-                                       
                                         ZStack{
                                             Image("left-paint-\(myData.firstColor)")
                                                 .resizable()
@@ -498,9 +473,7 @@ struct PaintView: View {
                                                     
                                             }
                                         }
-    
                                     }
-                                    
                                     // second paint
                                     if myData.selectSecond {
                                         
@@ -508,9 +481,7 @@ struct PaintView: View {
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .trailing])
-             
                                     } else {
-                                        
                                         ZStack{
                                             Image("right-paint-\(myData.secondColor)")
                                                 .resizable()
@@ -542,21 +513,14 @@ struct PaintView: View {
                                 
                                 HStack{
                                     Button(action: {
-                                       
                                         myData.count += 1
-                                        
-                                        print("MIX button click")
-                                        print(myData.resultColor)
-                                        print(myData.targetColor)
                                         if myData.resultColor == myData.targetColor {
                                             myData.right += 1
                                             if myData.count < 7 {
                                                 print("correct")
                                                 Sounds2.play(sound: "correct", type: "mp3")
-                                                
                                             } else {
                                                 // game over
-                                                print("7번째")
                                                 myData.selectFirst = false
                                                 myData.selectSecond = false
                                                 myData.firstColor = "empty"
@@ -575,7 +539,6 @@ struct PaintView: View {
                                                 } else {
                                                     myData.targetColor = randomColor
                                                 }
-        
                                             }
                                         } else {
                                             myData.wrong += 1
@@ -592,7 +555,6 @@ struct PaintView: View {
                                                 } else {
                                                     myData.targetColor = randomColor
                                                 }
-        
                                             }
                                             
                                             // game over
@@ -627,13 +589,8 @@ struct PaintView: View {
                                         ClearView(time: myData.getTime())
                                     }
                                 }
-                                
-                                
                             }
-                            
                         }
-                        
-                    
                     } // ZStack
                     .frame(minHeight: 260,  maxHeight: 270)
                 } else {
@@ -658,9 +615,7 @@ struct PaintView: View {
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .leading])
-                                            
                                     } else {
-                                       
                                         ZStack{
                                             Image("left-paint-\(myData.firstColor)")
                                                 .resizable()
@@ -684,22 +639,17 @@ struct PaintView: View {
                                                     .font(.title)
                                                     .fontWeight(.bold)
                                                     .offset(x: -10, y: 40 )
-                                                    
                                             }
                                         }
-    
                                     }
                                     
                                     // second paint
                                     if myData.selectSecond {
-                                        
                                         Image("right-paint-\(myData.secondColor)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding([.top, .trailing])
-             
                                     } else {
-                                        
                                         ZStack{
                                             Image("right-paint-\(myData.secondColor)")
                                                 .resizable()
@@ -727,22 +677,15 @@ struct PaintView: View {
                                         }
                                     }
                                 }
-                                
-                                
+  
                                 HStack{
                                     Button(action: {
-                                       
                                         myData.count += 1
-                                        
-                                        print("MIX button click")
-                                        print(myData.resultColor)
-                                        print(myData.targetColor)
                                         if myData.resultColor == myData.targetColor {
                                             myData.right += 1
                                             if myData.count < 7 {
                                                 print("correct")
                                                 Sounds2.play(sound: "correct", type: "mp3")
-                                                
                                             } else {
                                                 // game over
                                                 print("7번째")
@@ -764,7 +707,6 @@ struct PaintView: View {
                                                 } else {
                                                     myData.targetColor = randomColor
                                                 }
-        
                                             }
                                         } else {
                                             myData.wrong += 1
@@ -781,13 +723,11 @@ struct PaintView: View {
                                                 } else {
                                                     myData.targetColor = randomColor
                                                 }
-        
                                             }
                                             
                                             // game over
                                             if myData.count == 7 {
                                                 Sounds2.play(sound: "clear", type: "mp3")
-                                                print("7번째")
                                                 myData.selectFirst = false
                                                 myData.selectSecond = false
                                                 myData.firstColor = "empty"
@@ -816,25 +756,16 @@ struct PaintView: View {
                                         ClearView(time: myData.getTime())
                                     }
                                 }
-                                
-                                
                             }
-                            
                         }
-                        
-                    
                     } // ZStack
                     .frame(minHeight: 300,  maxHeight: 310)
                 }
             } // VStack
             .padding([.top, .bottom, .trailing])
         } // Geometry
- 
     } // body
-        
 } // PaintView
-
-
 
 
 
@@ -845,10 +776,8 @@ struct Arc: Shape {
     let clockwise: Bool
     let radius: Double
     let centerPoint: CGPoint
-
     func path(in rect: CGRect) -> Path {
       var path = Path()
-//      let radius = max(rect.size.width, rect.size.height) / 2
         let radius = self.radius
     path.addArc(center: CGPoint(x: rect.midX, y: rect.midY),
                 radius: radius,
@@ -864,21 +793,21 @@ func mixColor(first: String, second: String) -> String {
     let select = Set([Color(first), Color(second)])
     
     switch select {
-    //원색
+    //first
     case Set([Color("yellow"), Color("yellow")]):
         return "yellow"
     case Set([Color("blue"), Color("blue")]):
         return "blue"
     case Set([Color("red"), Color("red")]):
         return "red"
-    //2차색
+    //secondary
     case Set([Color("yellow"), Color("red")]):
         return "orange"
     case Set([Color("yellow"), Color("blue")]):
         return "green"
     case Set([Color("red"), Color("blue")]):
         return "violet"
-    //3차색
+    //third
     case Set([Color("yellow"), Color("green")]):
         return "yellow-green"
     case Set([Color("yellow"), Color("orange")]):

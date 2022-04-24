@@ -2,7 +2,7 @@ import SwiftUI
 
 
 struct Tutorial5: View {
-
+    
     
     var body: some View {
         ZStack{
@@ -11,9 +11,7 @@ struct Tutorial5: View {
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
-                
                 VStack{
-                    
                     Text(" \"We have a customer\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
@@ -42,7 +40,6 @@ struct Tutorial5: View {
                             )
                         )
                         .font(.largeTitle)
-                    
                 }
                 Image("staff1")
                     .resizable()
@@ -50,14 +47,11 @@ struct Tutorial5: View {
             }
         }
     }
-    
 }
-
 
 struct Tutorial5_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial5()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }

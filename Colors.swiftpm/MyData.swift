@@ -1,14 +1,8 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/20.
-//
-
 import Foundation
 import SwiftUI
 import Combine
- 
+
+
 class MyData: ObservableObject {
     @Published var value: Int = 0
     @Published var number: Int = 0
@@ -27,8 +21,7 @@ class MyData: ObservableObject {
     @Published var secondColor = "empty"
     @Published var selectFirst = false
     @Published var selectSecond = false
-    
-    
+
     var message = [
         " Give me the same color paint on the right ",
         " I need the color paint on the right!! ",
@@ -39,13 +32,10 @@ class MyData: ObservableObject {
         " It's the most popular paint shop in my town "
     ]
 
-    
     init() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             self.value += 1
-            
         }
-        
     }
     
     func getRandomCustomer() -> String{

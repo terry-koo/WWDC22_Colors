@@ -2,7 +2,7 @@ import SwiftUI
 
 
 struct Tutorial4: View {
-
+    
     
     var body: some View {
         ZStack{
@@ -22,7 +22,6 @@ struct Tutorial4: View {
                             )
                         )
                         .font(.largeTitle)
-                    
                 }
                 VStack{
                     Image("staff1")
@@ -42,7 +41,6 @@ struct Tutorial4: View {
             }
         }
     }
-    
 }
 
 

@@ -2,10 +2,9 @@ import SwiftUI
 
 
 struct Tutorial12: View {
-
+    
+    
     var body: some View {
-        
-
         ZStack{
             GeometryReader { geometry in
                 
@@ -30,10 +29,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // triangle red
                             Path { path in
                                 path.move(to: centerPoint)
@@ -43,8 +39,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
+
                             //triangle blue
                             Path { path in
                                 path.move(to: centerPoint)
@@ -54,10 +49,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary color orange
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -66,11 +58,7 @@ struct Tutorial12: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            //.stroke()
-                            
-                            
-                            
+
                             // secondary color green
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -80,10 +68,7 @@ struct Tutorial12: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary coloe violet
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
@@ -93,26 +78,20 @@ struct Tutorial12: View {
                                 path.closeSubpath()
                             }
                             //.stroke()
-                            
-                            
-                            
-                            
+   
                         } // GeometryReader
                         
                         .blendMode(.destinationOut)
                         .frame(width: 400, height: 400)
                         .offset(x: 248, y: -99)
-                        
-                        
-                        
+
                         RoundedRectangle(cornerRadius: 10)
                             .blendMode(.destinationOut)
                             .frame(width: 130, height: 120)
                             .offset(x: 310, y: 220)
                     }
                     .compositingGroup()
-                    
-                    
+
                     Text(" \"Third, tap on the remaining bucket and select the green from the hexagon\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
@@ -130,8 +109,7 @@ struct Tutorial12: View {
                             .fill(.black)
                             .opacity(0.85)
                             .edgesIgnoringSafeArea(.all)
-                        
-                        
+ 
                         RoundedRectangle(cornerRadius: 10)
                             .blendMode(.destinationOut)
                             .frame(width: 170, height: 160)
@@ -150,10 +128,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+                
                             // triangle red
                             Path { path in
                                 path.move(to: centerPoint)
@@ -163,8 +138,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
+
                             //triangle blue
                             Path { path in
                                 path.move(to: centerPoint)
@@ -174,10 +148,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary color orange
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -186,11 +157,7 @@ struct Tutorial12: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            //.stroke()
-                            
-                            
-                            
+
                             // secondary color green
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -200,10 +167,7 @@ struct Tutorial12: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary coloe violet
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
@@ -213,10 +177,7 @@ struct Tutorial12: View {
                                 path.closeSubpath()
                             }
                             //.stroke()
-                            
-                            
-                            
-                            
+
                         } // GeometryReader
                         
                         .blendMode(.destinationOut)
@@ -224,7 +185,6 @@ struct Tutorial12: View {
                         .offset(x: 290, y: -137)
                     }
                     .compositingGroup()
-                    
                     
                     Text(" \"Third, tap on the remaining bucket and select the green from the hexagon\" ")
                         .foregroundColor(Color("message-font"))
@@ -235,17 +195,13 @@ struct Tutorial12: View {
                         )
                         .font(.largeTitle)
                         .offset(x: 50, y: 450)
-            
-                
                 // 12.9inch
                 } else {
-                    
                     ZStack{
                         Rectangle()
                             .fill(.black)
                             .opacity(0.85)
                             .edgesIgnoringSafeArea(.all)
-                        
                         GeometryReader{ geometry in
                             let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                             let weight: Double = geometry.size.width * 0.255
@@ -259,10 +215,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+ 
                             // triangle red
                             Path { path in
                                 path.move(to: centerPoint)
@@ -272,8 +225,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
+
                             //triangle blue
                             Path { path in
                                 path.move(to: centerPoint)
@@ -283,10 +235,7 @@ struct Tutorial12: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary color orange
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -295,11 +244,7 @@ struct Tutorial12: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            //.stroke()
-                            
-                            
-                            
+
                             // secondary color green
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -309,10 +254,7 @@ struct Tutorial12: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+ 
                             // secondary coloe violet
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
@@ -351,8 +293,6 @@ struct Tutorial12: View {
                         .offset(x: 200, y: 600)
                 }
             }
-  
         }
     }
-    
 }

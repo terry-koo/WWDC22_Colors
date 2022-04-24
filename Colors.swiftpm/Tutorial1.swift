@@ -1,9 +1,3 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/23.
-//
 import SwiftUI
 
 
@@ -60,19 +54,15 @@ struct Tutorial1: View {
                         )
                         .font(.largeTitle)
                         .padding()
-                    
                 }
             }
         }
     }
-    
 }
-
 
 struct Tutorial1_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial1()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }

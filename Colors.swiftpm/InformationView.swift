@@ -1,14 +1,9 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/22.
-//
-
 import SwiftUI
+
 
 struct InformationView: View {
     @EnvironmentObject var myData: MyData
+    
     
     var body: some View {
         VStack{
@@ -23,7 +18,6 @@ struct InformationView: View {
                         .padding()
                     }
                 )
-                
             }
             .padding()
             VStack(alignment: .leading){
@@ -32,15 +26,12 @@ struct InformationView: View {
                     
                 Text("Contact : xpflxhfl94@naver.com")
                     .font(.title)
-                    
             }
-           
-            
+
             ZStack{
                 //circle
                 GeometryReader{ geometry in
                     let radius: Double = geometry.size.width * 0.2
-                    
                     let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                
                     Arc(startAngle: .degrees(105), endAngle: .degrees(135), clockwise: false,
@@ -66,10 +57,8 @@ struct InformationView: View {
                     Arc(startAngle: .degrees(315), endAngle: .degrees(345), clockwise: false,
                         radius: radius, centerPoint: centerPoint)
                       .stroke(Color("orange"), lineWidth: 50)
-
                 }
-
-                
+ 
                 // circle
                 GeometryReader{ geometry in
                     let radius: Double = geometry.size.width * 0.2
@@ -107,9 +96,6 @@ struct InformationView: View {
                 .foregroundColor(.gray)
                 .font(.caption2)
                 .padding()
-
         }
-        
-        
     }
 }

@@ -2,11 +2,10 @@ import SwiftUI
 
 
 struct Tutorial11: View {
-
+    
+    
     var body: some View {
-        
         GeometryReader { geometry in
-            
             // 9.7inch
             if geometry.size.height < 769 {
                 ZStack{
@@ -15,7 +14,6 @@ struct Tutorial11: View {
                                 .fill(.black)
                                 .opacity(0.85)
                                 .edgesIgnoringSafeArea(.all)
-
 
                             Circle()
                                 .blendMode(.destinationOut)
@@ -51,7 +49,6 @@ struct Tutorial11: View {
                                 .opacity(0.85)
                                 .edgesIgnoringSafeArea(.all)
 
-
                             Circle()
                                 .blendMode(.destinationOut)
                                 .frame(width: 465, height: 465)
@@ -73,7 +70,6 @@ struct Tutorial11: View {
                             )
                             .font(.largeTitle)
                             .offset(x: 0, y: 145)
-                               
                 }
                 .compositingGroup()
             
@@ -85,7 +81,6 @@ struct Tutorial11: View {
                                 .fill(.black)
                                 .opacity(0.85)
                                 .edgesIgnoringSafeArea(.all)
-
 
                             Circle()
                                 .blendMode(.destinationOut)
@@ -108,25 +103,16 @@ struct Tutorial11: View {
                             )
                             .font(.largeTitle)
                             .offset(x: 0, y: 145)
-                               
                 }
                 .compositingGroup()
             }
         }
-       
-            
-           
-               
-    
-    
     }
-    
 }
 
 struct Tutorial11_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial11()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }

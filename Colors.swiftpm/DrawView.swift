@@ -1,11 +1,5 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/19.
-//
-
 import SwiftUI
+
 
 struct DrawView: View {
     @State private var canTouchDown = true
@@ -13,12 +7,8 @@ struct DrawView: View {
 
 
     var body: some View {
-        
         GeometryReader{ geometry in
-           
-            
             ZStack{
-                
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color("card-foreground"), lineWidth: 4)
                     .shadow(color: .gray, radius: 3, x: 3, y: 3)
@@ -84,11 +74,9 @@ struct DrawView: View {
                                 .fontWeight(.bold)
                         }
                     }
-                    
                     Spacer()
                     
                     ZStack {
-                        
                         if geometry.size.height < 749.0 {
                             Circle()
                                 .fill(Color(myData.targetColor))
@@ -151,13 +139,9 @@ struct DrawView: View {
                                     .shadow(color: .gray, radius: 1, x: 1, y: -1)
                                 }
                         }
-                        
                     }
                     .padding(.top)
-                
-
                     Spacer()
-                    
 
                 }
             } // ZStack
@@ -169,13 +153,10 @@ struct DrawView: View {
 
 
 func timeString(time: Int) -> String {
-//       let hours   = Int(time) / 3600
        let minutes = Int(time) / 60 % 60
        let seconds = Int(time) % 60
        return String(format:"%02i:%02i", minutes, seconds)
-   }
-
-
+}
 
 struct DrawView_Preview: PreviewProvider {
     static var previews: some View {

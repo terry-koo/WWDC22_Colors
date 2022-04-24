@@ -1,9 +1,3 @@
-//
-//  File.swift
-//  Colors
-//
-//  Created by Terry Koo on 2022/04/20.
-//
 import SwiftUI
 
 
@@ -29,13 +23,7 @@ struct ContentView: View {
                     print("play sound")
                 })
             }
-            
-//            if !tutorialFin {
-//                Rectangle()
-//                    .opacity(0.5)
-//                    .edgesIgnoringSafeArea(.all)
-//            }
-            
+ 
             if tutorial == 0 {
                 Tutorial0()
                     .edgesIgnoringSafeArea(.all)
@@ -96,6 +84,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
                         tutorial += 1
+                        myData.selectFirst = true
                     }
             } else if tutorial == 10{
                 Tutorial10()
@@ -103,6 +92,7 @@ struct ContentView: View {
                     .onTapGesture {
                         myData.firstColor = "yellow"
                         tutorial += 1
+                        myData.selectFirst = false
                     }
             } else if tutorial == 11{
                 Tutorial11()
@@ -161,11 +151,7 @@ struct ContentView: View {
                         myData.right = 0
                         myData.targetColor = Array(Set(["blue-green", "blue-violet", "green", "orange", "red-orange", "red-violet", "violet", "yellow-green", "yellow-orange"]))[0]
                     }
-                    
             }
-                
-            
         }
-        
     }
 }

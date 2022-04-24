@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct Tutorial15: View {
 
+struct Tutorial15: View {
+    
+    
     var body: some View {
         ZStack{
             Rectangle()
@@ -9,7 +11,6 @@ struct Tutorial15: View {
                 .opacity(0.85)
                 .edgesIgnoringSafeArea(.all)
             HStack{
-                
                 VStack{
                     Text(" \"Don’t forget to mix the paint the customer wants!\" ")
                         .foregroundColor(Color("message-font"))
@@ -19,8 +20,7 @@ struct Tutorial15: View {
                             )
                         )
                         .font(.largeTitle)
-                    
-                    
+   
                     Text(" \"Good Luck!!\" ")
                         .foregroundColor(Color("message-font"))
                         .background(
@@ -30,15 +30,11 @@ struct Tutorial15: View {
                         )
                         .font(.largeTitle)
                         .padding()
-                    
-                    
-        
                 }
                 VStack{
                     Image("staff2")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                    
                     Text(" manager ")
                         .foregroundColor(.black)
                         .background(
@@ -52,5 +48,4 @@ struct Tutorial15: View {
             }
         }
     }
-    
 }

@@ -2,10 +2,10 @@ import SwiftUI
 
 
 struct Tutorial10: View {
-
+    
+    
     var body: some View {
         GeometryReader { geometry in
-            
             // 9.7inch
             if geometry.size.height < 769 {
                 ZStack{
@@ -29,10 +29,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // triangle red
                             Path { path in
                                 path.move(to: centerPoint)
@@ -42,8 +39,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
+
                             //triangle blue
                             Path { path in
                                 path.move(to: centerPoint)
@@ -53,10 +49,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary color orange
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -65,10 +58,6 @@ struct Tutorial10: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            //.stroke()
-                            
-                            
                             
                             // secondary color green
                             Path { path in
@@ -79,10 +68,7 @@ struct Tutorial10: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+   
                             // secondary coloe violet
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
@@ -91,11 +77,7 @@ struct Tutorial10: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
                                 path.closeSubpath()
                             }
-                            //.stroke()
-                            
-                            
-                            
-                            
+  
                         } // GeometryReader
                         
                         .blendMode(.destinationOut)
@@ -115,8 +97,7 @@ struct Tutorial10: View {
                     
                 }
                 .compositingGroup()
-            
-                
+        
             // 11inch
             } else if geometry.size.height < 835 {
                 ZStack{
@@ -125,8 +106,7 @@ struct Tutorial10: View {
                             .fill(.black)
                             .opacity(0.85)
                             .edgesIgnoringSafeArea(.all)
-                        
-                        
+
                         GeometryReader{ geometry in
                             let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                             let weight: Double = geometry.size.width * 0.215
@@ -140,10 +120,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+  
                             // triangle red
                             Path { path in
                                 path.move(to: centerPoint)
@@ -153,8 +130,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
+
                             //triangle blue
                             Path { path in
                                 path.move(to: centerPoint)
@@ -164,10 +140,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary color orange
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -176,11 +149,7 @@ struct Tutorial10: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            //.stroke()
-                            
-                            
-                            
+
                             // secondary color green
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -190,10 +159,7 @@ struct Tutorial10: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+ 
                             // secondary coloe violet
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
@@ -203,16 +169,10 @@ struct Tutorial10: View {
                                 path.closeSubpath()
                             }
                             //.stroke()
-                            
-                            
-                            
-                            
                         } // GeometryReader
-                        
                         .blendMode(.destinationOut)
                         .frame(width: 400, height: 400)
                         .offset(x: 290, y: -137)
-                        
                     } // ZStack
                     Text(" \"Second, select the yellow from the hexagon \n Because yellow-green is made by mixing yellow and green\" ")
                         .foregroundColor(Color("message-font"))
@@ -223,21 +183,18 @@ struct Tutorial10: View {
                         )
                         .font(.largeTitle)
                         .offset(x: 0, y: 105)
-                    
                 }
                 .compositingGroup()
             
             // 12.9inch
             } else {
-                
                 ZStack{
                     ZStack{
                         Rectangle()
                             .fill(.black)
                             .opacity(0.85)
                             .edgesIgnoringSafeArea(.all)
-                        
-                        
+
                         GeometryReader{ geometry in
                             let centerPoint = CGPoint(x: geometry.size.width/2, y: geometry.size.height/2)
                             let weight: Double = geometry.size.width * 0.255
@@ -251,10 +208,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+  
                             // triangle red
                             Path { path in
                                 path.move(to: centerPoint)
@@ -264,8 +218,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
+
                             //triangle blue
                             Path { path in
                                 path.move(to: centerPoint)
@@ -275,10 +228,7 @@ struct Tutorial10: View {
                                 path.addLine(to: centerPoint)
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+
                             // secondary color orange
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
@@ -287,24 +237,16 @@ struct Tutorial10: View {
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            //.stroke()
-                            
-                            
-                            
+
                             // secondary color green
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
                                 path.addLine(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y - 1 * weight))
-                                
                                 path.addLine(to: CGPoint(x: centerPoint.x , y: centerPoint.y - 2 * weight))
                                 path.closeSubpath()
                             }
-                            
-                            
-                            
-                            
+  
                             // secondary coloe violet
                             Path { path in
                                 path.move(to: CGPoint(x: centerPoint.x - (3.0).squareRoot() * weight , y: centerPoint.y + 1 * weight))
@@ -314,12 +256,8 @@ struct Tutorial10: View {
                                 path.closeSubpath()
                             }
                             //.stroke()
-                            
-                            
-                            
-                            
+    
                         } // GeometryReader
-                        
                         .blendMode(.destinationOut)
                         .frame(width: 400, height: 400)
                         .offset(x: 333, y: -157)
@@ -339,20 +277,12 @@ struct Tutorial10: View {
                 .compositingGroup()
             }
         }
-        
-            
-           
-               
-    
-    
     }
-    
 }
 
 struct Tutorial10_Preview: PreviewProvider {
     static var previews: some View {
         Tutorial10()
             .previewInterfaceOrientation(.landscapeRight)
-         
     }
 }
