@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var tutorial: Int = 0
     @State var tutorialFin: Bool = false
     
+    
     var body: some View {
         ZStack{
             Group{
@@ -141,8 +142,11 @@ struct ContentView: View {
                     .onTapGesture {
                         tutorial += 1
                         myData.value = 0
+                        myData.showTips = true
                     }
+                    
             }
+                
             
         }
         

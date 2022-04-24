@@ -25,6 +25,9 @@ struct PaintView: View {
      
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("card"))
+                            .sheet(isPresented: $myData.showTips) {
+                                TipsView()
+                            }
                         
                         //circle
                         GeometryReader{ geometry in
@@ -778,6 +781,7 @@ struct PaintView: View {
             } // VStack
             .padding([.top, .bottom, .trailing])
         } // Geometry
+ 
     } // body
         
 } // PaintView
