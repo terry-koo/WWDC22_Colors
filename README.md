@@ -1,5 +1,5 @@
-# Colors
-## _WWDC22 Swift Student Challenge_
+# Colors - _WWDC22 Swift Student Challenge_
+
 
 
 My application was created with SwiftUI, and it's designed for young children who want to be familiar with colors, people who want to know what colors can be combined to produce a particular color, and users who develop a sense of color.
