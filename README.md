@@ -36,7 +36,8 @@ Also, intuitively, what colors combine to produce the resulting colors, and the 
 
 For example, a triangle is composed of three primary colors, and the isosceles attached to the hypotenuse of the triangle represent colors that can come from the combination of primary colors that are tangent to the quadratic color.
 
-![closed.png](https://www.dropbox.com/s/ec0wkus6klbxzc4/closed.png?dl=0&raw=1)
+![closed](https://user-images.githubusercontent.com/67509011/167083580-26566f80-b323-430b-b9a6-d884e0c6767e.png)
+
 
 
 ## License
