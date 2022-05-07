@@ -63,8 +63,9 @@ For example, a triangle is composed of three primary colors, and the isosceles a
 ![simulator_screenshot_9578AFE3-DA64-4FBF-B347-908126F09425](https://user-images.githubusercontent.com/67509011/167242647-51e0d880-0b5f-4f5b-826c-1e47961f7f6e.png)
 ![simulator_screenshot_17B5DDB7-373E-4246-9E89-B708FDD2C4E7](https://user-images.githubusercontent.com/67509011/167242728-4e511db8-f819-4846-b074-85a6f30ce843.png)
 ![simulator_screenshot_53682B1F-21D6-4B31-B3A3-6852B1A5131A](https://user-images.githubusercontent.com/67509011/167242737-0a2be013-f4c5-49ae-ad8d-b3725d1cf14d.png)
-![simulator_screenshot_D9096DE1-732B-40DA-BB01-61274C79D8B7](https://user-images.githubusercontent.com/67509011/167242733-2331b8b8-0fb9-4d2f-859d-9e34359a21e1.png)
 ![simulator_screenshot_92C3B23C-A9A3-46F5-B25D-F7906ED17CA3](https://user-images.githubusercontent.com/67509011/167242770-a53797d4-d66e-4c9e-b759-6f56d0039e70.png)
+![simulator_screenshot_D9096DE1-732B-40DA-BB01-61274C79D8B7](https://user-images.githubusercontent.com/67509011/167242733-2331b8b8-0fb9-4d2f-859d-9e34359a21e1.png)
+
 <br/>
 <br/>
 
