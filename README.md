@@ -7,14 +7,14 @@ My application was created with SwiftUI, and it's designed for young children wh
 
 ## Tech
 - [SwiftUI] - Advanced app experiences and tools
-
+<br/>
 
 
 ## Supported Devices 
 - iPad Pro (9.7-inch) 
 - iPad Pro (11-inch)
 - iPad Pro (12.9-inch)
-
+<br/>
 
 
 ## Features
@@ -26,6 +26,7 @@ In the upper right corner of the main page of the app, the complementary color s
 Also, intuitively, what colors combine to produce the resulting colors, and the triangles and triangles are combined to make them visually conspicuous using pentagon.
 
 For example, a triangle is composed of three primary colors, and the isosceles attached to the hypotenuse of the triangle represent colors that can come from the combination of primary colors that are tangent to the quadratic color.
+<br/>
 
 
 ## How to play
@@ -34,6 +35,7 @@ In the upper right corner of the main page of the app, the complementary color s
 Also, intuitively, what colors combine to produce the resulting colors, and the triangles and triangles are combined to make them visually conspicuous using pentagon.
 
 For example, a triangle is composed of three primary colors, and the isosceles attached to the hypotenuse of the triangle represent colors that can come from the combination of primary colors that are tangent to the quadratic color.
+<br/>
 
 
 
@@ -61,7 +63,7 @@ For example, a triangle is composed of three primary colors, and the isosceles a
 ![simulator_screenshot_53682B1F-21D6-4B31-B3A3-6852B1A5131A](https://user-images.githubusercontent.com/67509011/167242737-0a2be013-f4c5-49ae-ad8d-b3725d1cf14d.png)
 ![simulator_screenshot_D9096DE1-732B-40DA-BB01-61274C79D8B7](https://user-images.githubusercontent.com/67509011/167242733-2331b8b8-0fb9-4d2f-859d-9e34359a21e1.png)
 ![simulator_screenshot_92C3B23C-A9A3-46F5-B25D-F7906ED17CA3](https://user-images.githubusercontent.com/67509011/167242770-a53797d4-d66e-4c9e-b759-6f56d0039e70.png)
-
+<br/>
 
 
 ## License
