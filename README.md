@@ -1,4 +1,4 @@
-# Colors - _WWDC22 Swift Student Challenge_
+# Colors - _WWDC22 Swift Student Challenge_ [Accepted]
 
 
 
