@@ -33,7 +33,7 @@ class MyData: ObservableObject {
     ]
 
     init() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.value += 1
         }
     }
